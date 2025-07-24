@@ -32,6 +32,12 @@ author:
     email: hdamer@uni-bremen.de
     role: editor
     country: Germany
+ -
+    ins: J. Jiménez
+    name: Jaime Jiménez
+    organization: Ericsson
+    phone: "+358-442-992-827"
+    email: jaime@iki.fi
 
 entity:
         SELF: "[RFC-XXXX]"
