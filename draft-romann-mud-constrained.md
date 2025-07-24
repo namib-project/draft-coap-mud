@@ -10,8 +10,8 @@ category: info # std is not allowed for independent submissions, as it seems
 submissiontype: independent
 # consensus: true # Not allowed for independent submissions
 
-# area: $AREA
-# workgroup: $WorkGroup
+area: ops
+workgroup: iotops
 keyword: Internet-Draft, CoAP, MUD
 
 venue:
