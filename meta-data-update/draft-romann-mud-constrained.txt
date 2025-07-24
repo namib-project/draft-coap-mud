@@ -2,10 +2,12 @@
 
 
 
-Network Working Group                                     J. Romann, Ed.
+iotops                                                    J. Romann, Ed.
 Internet-Draft                                             H. Damer, Ed.
 Intended status: Informational                        Universität Bremen
-Expires: 28 August 2024                                 25 February 2024
+Expires: 25 January 2026                                      J. Jiménez
+                                                                Ericsson
+                                                            24 July 2025
 
 
                  Using MUD in Constrained Environments
@@ -43,11 +45,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 August 2024.
+   This Internet-Draft will expire on 25 January 2026.
 
 Copyright Notice
 
-   Copyright (c) 2024 IETF Trust and the persons identified as the
+   Copyright (c) 2025 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -664,9 +666,9 @@ Table of Contents
               Mattsson, J. P., Selander, G., and C. Amsüss,
               "Amplification Attacks Using the Constrained Application
               Protocol (CoAP)", Work in Progress, Internet-Draft, draft-
-              irtf-t2trg-amplification-attacks-03, 21 February 2024,
+              irtf-t2trg-amplification-attacks-05, 18 June 2025,
               <https://datatracker.ietf.org/doc/html/draft-irtf-t2trg-
-              amplification-attacks-03>.
+              amplification-attacks-05>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -730,3 +732,9 @@ Authors' Addresses
    Universität Bremen
    Germany
    Email: hdamer@uni-bremen.de
+
+
+   Jaime Jiménez
+   Ericsson
+   Phone: +358-442-992-827
+   Email: jaime@iki.fi
