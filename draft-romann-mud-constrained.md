@@ -482,9 +482,7 @@ Network operators SHOULD specify a policy that describes:
 
 --- back
 
+<!--
 # Acknowledgments
 {: numbered="no"}
-
-We would like to thank Jaime Jiménez for allowing us to build upon his draft
-`draft-jimenez-t2trg-mud-coap-00` for creating an initial version of this
-document.
+-->
