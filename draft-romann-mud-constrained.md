@@ -10,8 +10,8 @@ category: info # std is not allowed for independent submissions, as it seems
 submissiontype: independent
 # consensus: true # Not allowed for independent submissions
 
-# area: $AREA
-# workgroup: $WorkGroup
+area: ops
+workgroup: iotops
 keyword: Internet-Draft, CoAP, MUD
 
 venue:
@@ -32,6 +32,12 @@ author:
     email: hdamer@uni-bremen.de
     role: editor
     country: Germany
+ -
+    ins: J. Jiménez
+    name: Jaime Jiménez
+    organization: Ericsson
+    phone: "+358-442-992-827"
+    email: jaime@iki.fi
 
 entity:
         SELF: "[RFC-XXXX]"
@@ -476,9 +482,7 @@ Network operators SHOULD specify a policy that describes:
 
 --- back
 
+<!--
 # Acknowledgments
 {: numbered="no"}
-
-We would like to thank Jaime Jiménez for allowing us to build upon his draft
-`draft-jimenez-t2trg-mud-coap-00` for creating an initial version of this
-document.
+-->
