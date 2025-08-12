@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-07-10T00:56:58.605696+00:00",
+  "timestamp": "2025-08-12T00:58:14.739372+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -24,14 +24,14 @@
       "color": "a2eeef"
     },
     {
-      "name": "help wanted",
-      "description": "Extra attention is needed",
-      "color": "008672"
-    },
-    {
       "name": "good first issue",
       "description": "Good for newcomers",
       "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
     },
     {
       "name": "invalid",
@@ -60,9 +60,9 @@
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
-      "body": "This issue tracks possible additions to the draft.\r\n\r\n- [ ] #4\r\n- [ ]  Allow for encoding MUD files as CBOR\r\n    - This is probably related to [draft-ietf-core-yang-cbor-17](https://datatracker.ietf.org/doc/html/draft-ietf-core-yang-cbor)\r\n- [ ] #3\r\n- [ ] Allow for other URL schemes? (e. g. `coaps` or `coaps+tcp`)\r\n- [ ] Define CoAP multicast address and well-known URI for registration  with MUD managers \r\n- [ ] Define MUD fields for ~~EAP-NOOB~~EAP-UTE (CC @Janfred)\r\n",
+      "body": "This issue tracks possible additions to the draft.\r\n\r\n- [ ] #4\r\n- [ ]  Allow for encoding MUD files as CBOR\r\n    - This is probably related to [RFC 9254](https://datatracker.ietf.org/doc/html/rfc9254)\r\n- [x] #3\r\n- [ ] Allow for other URL schemes? (e. g. `coaps` or `coaps+tcp`)\r\n- [ ] Define CoAP multicast address and well-known URI for registration  with MUD managers \r\n- [ ] Define MUD fields for ~~EAP-NOOB~~EAP-UTE (CC @Janfred)\r\n",
       "createdAt": "2021-11-23T10:44:51Z",
-      "updatedAt": "2022-07-07T17:45:46Z",
+      "updatedAt": "2024-02-25T10:44:54Z",
       "closedAt": null,
       "comments": []
     },
@@ -71,16 +71,31 @@
       "id": "I_kwDOFl88Ys5NWzj-",
       "title": "Clarify the use of the NDP option",
       "url": "https://github.com/namib-project/draft-coap-mud/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "JKRhb",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "It should be discussed where the NDP option is supposed to be included. Should it only be sent in Router Solicitations? Or could it be used in other message types as well:\r\n\r\n- Neighbor Solicitation (type 135)\r\n- Neighbor Advertisement (type 136)\r\n- Redirect (type 137)\r\n\r\nMy current impression is that these message types are not suitable for MUD URLs, but I might be wrong here.",
       "createdAt": "2022-07-07T17:33:55Z",
-      "updatedAt": "2022-07-07T17:36:02Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2023-03-01T11:42:34Z",
+      "closedAt": "2023-03-01T11:42:34Z",
+      "comments": [
+        {
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "body": "Is this still relevant? If so, it should probably be transferred to [JKRhb/mud-ndp-option](https://github.com/JKRhb/mud-ndp-option), I assume.",
+          "createdAt": "2023-03-01T11:37:14Z",
+          "updatedAt": "2023-03-01T11:37:14Z"
+        },
+        {
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "body": "Hmm, seems as if you can only move the issue to a repository within the same organization/user. I will close it for now here and may either reopen it over at [JKRhb/mud-ndp-option](https://github.com/JKRhb/mud-ndp-option) or, alternatively, move the NDP repo to this organization and then transfer the issue.",
+          "createdAt": "2023-03-01T11:42:34Z",
+          "updatedAt": "2023-03-01T11:42:34Z"
+        }
+      ]
     },
     {
       "number": 4,
@@ -273,6 +288,1112 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOFl88Ys4_Tv41",
+      "title": "Adjust Draft",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/6",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "[Latest rendered version](https://namib.me/draft-coap-mud/expand-draft2/draft-romann-mud-constrained.html)\r\n\r\nSee [here](https://hackmd.informatik.uni-bremen.de/X0SsUEsIQxeUGT3b0RiWhQ#) for notes regarding the draft (in German).",
+      "createdAt": "2022-09-20T22:30:05Z",
+      "updatedAt": "2022-11-18T14:12:35Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "08d673cc5c67eba9da44c0665337351d8277b903",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "expand-draft2",
+      "headRefOid": "fd79c8a8f1097c17d68bd134c1c9b7b65ae13aa2",
+      "closedAt": "2022-11-18T14:12:31Z",
+      "mergedAt": "2022-11-18T14:12:31Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "cc1a16a6d6b58868fb40c725c0fc37bce9da2839"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5FI2TV",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:01:16Z",
+          "updatedAt": "2022-10-28T12:01:17Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "```suggestion\r\n -\r\n    ins: H. Damer\r\n    name: Hugo Hakim Damer\r\n    organization: Universit\u00e4t Bremen\r\n    email: hdamer@uni-bremen.de\r\n    role: editor\r\n - \r\n```",
+              "createdAt": "2022-10-28T12:01:16Z",
+              "updatedAt": "2022-10-28T12:01:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FI3m_",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:05:35Z",
+          "updatedAt": "2022-10-28T12:05:35Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "```suggestion\r\nThis document specifies new methods for adding Manufacturer Usage Descriptions (MUD) to constrained environments.\r\n```",
+              "createdAt": "2022-10-28T12:05:35Z",
+              "updatedAt": "2022-10-28T12:05:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FI-z9",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:28:55Z",
+          "updatedAt": "2022-10-28T12:28:55Z",
+          "comments": [
+            {
+              "originalPosition": 137,
+              "body": "TODO: relation-type vs resource type",
+              "createdAt": "2022-10-28T12:28:55Z",
+              "updatedAt": "2022-10-28T12:28:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FJBWy",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:36:48Z",
+          "updatedAt": "2022-10-28T12:36:48Z",
+          "comments": [
+            {
+              "originalPosition": 185,
+              "body": "Possible additions:\r\n- \"All MUD nodes\" multicast address\r\n- \"All MUD controllers\" multicast address (or reuse \"All Routers address\"?)\r\n    - Alternative: All MUD Receivers",
+              "createdAt": "2022-10-28T12:36:48Z",
+              "updatedAt": "2022-10-28T12:58:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FJCPy",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:39:38Z",
+          "updatedAt": "2022-10-28T12:39:39Z",
+          "comments": [
+            {
+              "originalPosition": 185,
+              "body": "- Requirement: packets need to be allowed to get through\r\n- Scopes of addresses used for multicast?",
+              "createdAt": "2022-10-28T12:39:38Z",
+              "updatedAt": "2022-10-28T12:39:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FJCfT",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:40:18Z",
+          "updatedAt": "2022-10-28T12:40:18Z",
+          "comments": [
+            {
+              "originalPosition": 185,
+              "body": "Well-known endpoint for controllers ",
+              "createdAt": "2022-10-28T12:40:18Z",
+              "updatedAt": "2022-10-28T12:40:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FJC8R",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:41:41Z",
+          "updatedAt": "2022-10-28T12:41:41Z",
+          "comments": [
+            {
+              "originalPosition": 185,
+              "body": "Additional methods for finding the interface(s) of MUD controllers.",
+              "createdAt": "2022-10-28T12:41:41Z",
+              "updatedAt": "2022-10-28T12:41:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5FJDeO",
+          "commit": null,
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T12:43:07Z",
+          "updatedAt": "2022-10-28T12:43:08Z",
+          "comments": [
+            {
+              "originalPosition": 185,
+              "body": "Restructure document: Well-known resources first, then methods for discovery. ",
+              "createdAt": "2022-10-28T12:43:08Z",
+              "updatedAt": "2022-10-28T12:43:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5Gs1xy",
+          "commit": null,
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-18T14:09:15Z",
+          "updatedAt": "2022-11-18T14:09:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOFl88Ys5DObmS",
+      "title": "Further adjust draft structure",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/7",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "[Latest rendered version](https://namib.me/draft-coap-mud/structure/draft-romann-mud-constrained.html)",
+      "createdAt": "2022-11-18T16:25:27Z",
+      "updatedAt": "2022-11-25T15:53:06Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "cc1a16a6d6b58868fb40c725c0fc37bce9da2839",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "structure",
+      "headRefOid": "45fa415a63ab25d0d909bc15f66c3ad46f366a04",
+      "closedAt": "2022-11-25T15:53:00Z",
+      "mergedAt": "2022-11-25T15:53:00Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "f31327eca24f0d3af9ce11404f824d3f7ccc4274"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5Gt8Y9",
+          "commit": {
+            "abbreviatedOid": "4730e61"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-18T16:50:26Z",
+          "updatedAt": "2022-11-18T16:50:33Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Isn't this basically the subject of the entire draft? I am unsure whether this heading might be redundant.",
+              "createdAt": "2022-11-18T16:50:26Z",
+              "updatedAt": "2022-11-18T16:50:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5Gt9uD",
+          "commit": {
+            "abbreviatedOid": "4730e61"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-18T16:53:25Z",
+          "updatedAt": "2022-11-18T16:53:25Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Hmm, yeah, you're right. How about something like \"Additional Methods for Exposing MUD URLs\"?",
+              "createdAt": "2022-11-18T16:53:25Z",
+              "updatedAt": "2022-11-18T16:53:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5Gt-Wk",
+          "commit": {
+            "abbreviatedOid": "4730e61"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-18T16:55:25Z",
+          "updatedAt": "2022-11-18T16:55:25Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "I'd just remove the heading, other RFCs seem to be similarly structured, and nesting too many headings makes finding sections harder.",
+              "createdAt": "2022-11-18T16:55:25Z",
+              "updatedAt": "2022-11-18T16:55:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5GuKzy",
+          "commit": {
+            "abbreviatedOid": "4730e61"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-18T17:26:03Z",
+          "updatedAt": "2022-11-18T17:26:04Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Okay, sounds reasonable, I reverted this change :)",
+              "createdAt": "2022-11-18T17:26:04Z",
+              "updatedAt": "2022-11-18T17:26:04Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOFl88Ys5EJ9Ge",
+      "title": "Apply new structure, add additional content",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/8",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "[Rendered Version](https://namib.me/draft-coap-mud/new-structure/draft-romann-mud-constrained.html)",
+      "createdAt": "2022-12-02T16:17:32Z",
+      "updatedAt": "2022-12-16T14:06:29Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "f31327eca24f0d3af9ce11404f824d3f7ccc4274",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "new-structure",
+      "headRefOid": "74f9c54e27662899977625b063e1b976e1eff586",
+      "closedAt": "2022-12-16T14:06:25Z",
+      "mergedAt": "2022-12-16T14:06:25Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "464f6bd1b99a4bfd4aebfdccd97d226240131052"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5H2bg6",
+          "commit": {
+            "abbreviatedOid": "b5716ee"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2022-12-05T23:19:50Z",
+          "updatedAt": "2022-12-05T23:22:22Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "Repetition between lines 90-91 and 102-103",
+              "createdAt": "2022-12-05T23:19:51Z",
+              "updatedAt": "2022-12-05T23:22:23Z"
+            },
+            {
+              "originalPosition": 184,
+              "body": "```suggestion\r\n## CoRE Link Format and CoRE Resource Direectories\r\n```",
+              "createdAt": "2022-12-05T23:21:27Z",
+              "updatedAt": "2022-12-05T23:22:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5H2eH1",
+          "commit": {
+            "abbreviatedOid": "473ffda"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-12-05T23:26:13Z",
+          "updatedAt": "2022-12-05T23:26:14Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "I guess we can just remove the last sentence?",
+              "createdAt": "2022-12-05T23:26:13Z",
+              "updatedAt": "2022-12-05T23:26:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5H2f_E",
+          "commit": {
+            "abbreviatedOid": "473ffda"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-12-05T23:31:10Z",
+          "updatedAt": "2022-12-05T23:31:10Z",
+          "comments": [
+            {
+              "originalPosition": 49,
+              "body": "This is probably not going to happen, by the way. I also tried out mermaid, but that didn't work either. I guess we will need to stick to some ASCII art then and/or generate figures separately. But this is probably not that relevant yet.",
+              "createdAt": "2022-12-05T23:31:10Z",
+              "updatedAt": "2022-12-05T23:31:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5IxWyx",
+          "commit": {
+            "abbreviatedOid": "473ffda"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-12-16T14:03:13Z",
+          "updatedAt": "2022-12-16T14:03:14Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "```suggestion\r\nmanager, both the Thing and the MUD manager can play more active roles when\r\nusing CoAP {{!RFC7252}} for exposing and discovering MUD URLs.\r\n\r\nA general overview of the MUD architecture adjusted for using CoAP in a\r\nconstrained environment can be seen in {{arch1-fig}}.\r\nHere, we can see that both the Thing and the MUD manager (as the recipient of\r\nthe MUD URLs) may initiate the MUD discovery process:\r\nThe Thing can contact and register with MUD URL recipients, e.g. by sending a\r\nCoAP POST request via Multicast, addressing a well-known registration endpoint.\r\nConversely, MUD recipients can initiate the discovery process, e.g. by sending a\r\nCOAP GET request to a well-known URI via multicast.\r\n```",
+              "createdAt": "2022-12-16T14:03:13Z",
+              "updatedAt": "2022-12-16T14:03:14Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOFl88Ys5GJe_L",
+      "title": "feat: add first draft for CoAP MUD-URL payloads",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/9",
+      "state": "MERGED",
+      "author": "pulsastrix",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "pulsastrix"
+      ],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-12-24T00:33:01Z",
+      "updatedAt": "2023-03-03T13:59:12Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "ca20cb5761d0315ca6cebffb2fac3f3a5b9c97ac",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "formats_and_messages",
+      "headRefOid": "726cc52c39983404b7c6ab25ca18aa16ab86cae2",
+      "closedAt": "2023-02-24T14:24:29Z",
+      "mergedAt": "2023-02-24T14:24:28Z",
+      "mergedBy": "pulsastrix",
+      "mergeCommit": {
+        "oid": "3b9f0fca13088ce5b6889588f59efc2502b6c567"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5LYhhP",
+          "commit": {
+            "abbreviatedOid": "81b687b"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-01-22T06:04:29Z",
+          "updatedAt": "2023-01-22T06:20:26Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "The Accept option is actually non-repeatable, so from my understanding, content negotiation would occur over multiple exchanges if the Thing cannot fulfill the initial request. Would something like this work instead?\r\n\r\n```suggestion\r\n    Receivers MUST specify their desired payload format using the Accept option {{Section 5.10.4 of RFC7252}}.\r\n    During content negotiation, Receivers MUST start with requesting the Content-Format that provides the greatest degree of authenticity protection (i.e., prefer CWTs over plaintext transmission).\r\n```",
+              "createdAt": "2023-01-22T06:04:29Z",
+              "updatedAt": "2023-01-22T06:20:26Z"
+            },
+            {
+              "originalPosition": 61,
+              "body": "```suggestion\r\nThe simplest method of transmitting MUD-URLs is using a plain text payload containing only the MUD-URL.\r\n```",
+              "createdAt": "2023-01-22T06:09:17Z",
+              "updatedAt": "2023-01-22T06:20:26Z"
+            },
+            {
+              "originalPosition": 48,
+              "body": "Would something like this work?\r\n\r\n```suggestion\r\n    Receivers MAY limit their accepted Content-Formats to ones with a authentication level.\r\n    In this case, a Receiver MUST respond with the 4.15 (Unsupported Content-Format) Response Code if it does not allow the use of a provided payload format for security reasons.\r\n```",
+              "createdAt": "2023-01-22T06:19:37Z",
+              "updatedAt": "2023-01-22T06:20:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5NuShZ",
+          "commit": {
+            "abbreviatedOid": "b8deb12"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-17T18:18:58Z",
+          "updatedAt": "2023-02-17T18:18:58Z",
+          "comments": [
+            {
+              "originalPosition": 304,
+              "body": "```suggestion\r\nFor the discovery process described in {{#general_discovery}}, the following considerations apply to MUD receivers:\r\n```",
+              "createdAt": "2023-02-17T18:18:58Z",
+              "updatedAt": "2023-02-17T18:18:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OR-rc",
+          "commit": {
+            "abbreviatedOid": "1e2f382"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-24T12:28:10Z",
+          "updatedAt": "2023-02-24T12:28:10Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "```suggestion\r\n    Receivers MAY limit their accepted Content-Formats to ones with an authentication level.\r\n```",
+              "createdAt": "2023-02-24T12:28:10Z",
+              "updatedAt": "2023-02-24T12:28:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OSnvD",
+          "commit": {
+            "abbreviatedOid": "721439a"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-24T14:15:02Z",
+          "updatedAt": "2023-02-24T14:15:02Z",
+          "comments": [
+            {
+              "originalPosition": 108,
+              "body": "Hmm, in the rendered view, this subsection is a bit broken formatting-wise.\r\n\r\n![image](https://user-images.githubusercontent.com/12641361/221200241-74737cdb-797b-4a2b-af09-bb1f01ce7b64.png)\r\n",
+              "createdAt": "2023-02-24T14:15:02Z",
+              "updatedAt": "2023-02-24T14:15:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OSpFH",
+          "commit": {
+            "abbreviatedOid": "721439a"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-24T14:17:24Z",
+          "updatedAt": "2023-02-24T14:17:25Z",
+          "comments": [
+            {
+              "originalPosition": 108,
+              "body": "fixed in [726cc52](https://github.com/namib-project/draft-coap-mud/pull/9/commits/726cc52c39983404b7c6ab25ca18aa16ab86cae2)",
+              "createdAt": "2023-02-24T14:17:24Z",
+              "updatedAt": "2023-02-24T14:17:25Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOFl88Ys5HSfA6",
+      "title": "Adjust Resource Discovery section, clean up document",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/10",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-01-13T00:13:24Z",
+      "updatedAt": "2023-01-21T17:18:04Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "edb9b17d7505faa9f08f342043095cb4566017f1",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "more-content",
+      "headRefOid": "a15b1b295507f9870d8b0f02a0e6eb407878f8ec",
+      "closedAt": "2023-01-21T17:18:02Z",
+      "mergedAt": "2023-01-21T17:18:01Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "550ca9bb43b400a5d2a895b9967aaee9b094ed9d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5LUepQ",
+          "commit": null,
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-01-20T14:12:55Z",
+          "updatedAt": "2023-01-21T17:06:44Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "```suggestion\r\nnetworks using 6LoWPAN and SLAAC).\r\n```",
+              "createdAt": "2023-01-20T14:12:55Z",
+              "updatedAt": "2023-01-21T17:06:44Z"
+            },
+            {
+              "originalPosition": 38,
+              "body": "```suggestion\r\nFurthermore, using CBOR Web Tokens (CWTs), Things can distribute a signed MUD URL which\r\n```",
+              "createdAt": "2023-01-20T14:13:23Z",
+              "updatedAt": "2023-01-21T17:06:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5LYPFG",
+          "commit": {
+            "abbreviatedOid": "a15b1b2"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-01-21T17:17:31Z",
+          "updatedAt": "2023-01-21T17:17:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOFl88Ys5HpDqL",
+      "title": "Add acknowledgment for Jaime",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/11",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-01-18T16:21:07Z",
+      "updatedAt": "2023-01-19T00:53:01Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "464f6bd1b99a4bfd4aebfdccd97d226240131052",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "acknowledgments",
+      "headRefOid": "338e54e9178e188ad68ce44b2f1217a695ed170d",
+      "closedAt": "2023-01-19T00:52:55Z",
+      "mergedAt": "2023-01-19T00:52:55Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "edb9b17d7505faa9f08f342043095cb4566017f1"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5KwgfO",
+          "commit": {
+            "abbreviatedOid": "338e54e"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-01-18T20:05:11Z",
+          "updatedAt": "2023-01-18T20:05:11Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOFl88Ys5INs-n",
+      "title": "Expand Thing Behavior section",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/12",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "[Rendered version](https://namib.me/draft-coap-mud/thing-behavior/draft-romann-mud-constrained.html)",
+      "createdAt": "2023-01-20T13:37:59Z",
+      "updatedAt": "2023-02-24T14:07:41Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "550ca9bb43b400a5d2a895b9967aaee9b094ed9d",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "thing-behavior",
+      "headRefOid": "236efd12e91a1f90e59f87dfb3a38315ce5a90cf",
+      "closedAt": "2023-02-24T14:07:38Z",
+      "mergedAt": "2023-02-24T14:07:37Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "ca20cb5761d0315ca6cebffb2fac3f3a5b9c97ac"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5OSYOe",
+          "commit": null,
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-24T13:38:06Z",
+          "updatedAt": "2023-02-24T13:39:11Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "Maybe clarify what you mean by \"it\"\r\n\r\n```suggestion\r\nIf the Thing supports resource discovery using a `/.well-known/core` resource, \r\nMUD URL resources SHOULD be advertised there using the CoRE Link-Format \r\n{{!RFC6690}}, indicating the available Content-Formats using the `ct` parameter.\r\n```",
+              "createdAt": "2023-02-24T13:38:07Z",
+              "updatedAt": "2023-02-24T13:39:11Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOFl88Ys5K6gw4",
+      "title": "fix: many smaller adjustments, add security consideration ideas",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/13",
+      "state": "MERGED",
+      "author": "pulsastrix",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "pulsastrix"
+      ],
+      "labels": [],
+      "body": "Added some ideas for the security considerations section, also read through the whole draft and fixed some inconsistencies + adjusted some requirements to make them more uniform and internally consistent.",
+      "createdAt": "2023-02-28T10:23:10Z",
+      "updatedAt": "2023-03-03T13:58:40Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "3b9f0fca13088ce5b6889588f59efc2502b6c567",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "first_draft_adjustments",
+      "headRefOid": "c81d8e92700f03292e7e135c191802cb17f1ada2",
+      "closedAt": "2023-03-01T15:21:28Z",
+      "mergedAt": "2023-03-01T15:21:28Z",
+      "mergedBy": "pulsastrix",
+      "mergeCommit": {
+        "oid": "2227ea71a2bb300cbb613c80f63a7be58774a86b"
+      },
+      "comments": [
+        {
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "body": "Hmm, one thing I've noticed in the registration section: The multicast address for MUD receivers should probably be called \"All MUD Receivers\" instead of \"All MUD Managers\", right? Or should they also use the \"All MUD CoAP Nodes\" address?",
+          "createdAt": "2023-02-28T12:55:28Z",
+          "updatedAt": "2023-02-28T12:55:28Z"
+        },
+        {
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "body": "@JKRhb (for some reason I can't reply to your most recent comment): For IPv6, we can probably use a separate multicast address for MUD receivers, simply to reduce the unnecessary traffic that reaches the constrained Things (considering that we don't have a lack of addresses there :sweat_smile: )",
+          "createdAt": "2023-03-01T11:24:44Z",
+          "updatedAt": "2023-03-01T11:24:44Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5OhWQt",
+          "commit": {
+            "abbreviatedOid": "529c5ad"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "Thank you, the changes look good to me already :) See a couple of comments below.",
+          "createdAt": "2023-02-28T11:52:38Z",
+          "updatedAt": "2023-02-28T12:05:52Z",
+          "comments": [
+            {
+              "originalPosition": 177,
+              "body": "```suggestion\r\n- MUD receivers that support IPv6 devices MUST join the \"All MUD CoAP Nodes\" IPv6 multicast address.\r\n```",
+              "createdAt": "2023-02-28T11:52:38Z",
+              "updatedAt": "2023-02-28T12:05:52Z"
+            },
+            {
+              "originalPosition": 179,
+              "body": "```suggestion\r\n- MUD receivers that support IPv4 devices MUST join the \"All CoAP Nodes\" IPv4 multicast address.\r\n```",
+              "createdAt": "2023-02-28T11:52:53Z",
+              "updatedAt": "2023-02-28T12:05:52Z"
+            },
+            {
+              "originalPosition": 238,
+              "body": "```suggestion\r\n  As devices may be out of service for longer periods of time, preventing them from refreshing CWTs, this state is unavoidable for the vast majority of devices.\r\n```",
+              "createdAt": "2023-02-28T11:56:33Z",
+              "updatedAt": "2023-02-28T12:05:52Z"
+            },
+            {
+              "originalPosition": 239,
+              "body": "Would \"limited\" or \"restricted\" be a better fit than \"constrained\" here?\r\n\r\n```suggestion\r\n- In order to use expiry times anyways, manufacturers could use two different CWTs: A backup CWT without an expiry time with a MUD URL pointing to a very restricted MUD file that only allows updating the main CWT, and a main CWT that has an expiry time but has a more broad MUD file referenced in it.\r\n```",
+              "createdAt": "2023-02-28T12:00:12Z",
+              "updatedAt": "2023-02-28T12:05:52Z"
+            },
+            {
+              "originalPosition": 174,
+              "body": "Not related to this PR, but should this really be a MUST? And should we differentiate the IPv4/IPv6 case here as well?",
+              "createdAt": "2023-02-28T12:03:18Z",
+              "updatedAt": "2023-02-28T12:05:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OhgNO",
+          "commit": {
+            "abbreviatedOid": "529c5ad"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-28T12:15:15Z",
+          "updatedAt": "2023-02-28T12:15:16Z",
+          "comments": [
+            {
+              "originalPosition": 174,
+              "body": "1. My idea here was that by requiring the multicast request, we have at least one method of discovery that Things can assume to always be working. However, on second thought, this might be problematic if the underlying network does not allow for multicast, so maybe we should either specify the situations in which this is required, or replace MUST with SHOULD. What are your thoughts on this?\r\n\r\n2. Probably, yes, for clarity. I'll add that.",
+              "createdAt": "2023-02-28T12:15:15Z",
+              "updatedAt": "2023-02-28T12:15:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5Ohzis",
+          "commit": {
+            "abbreviatedOid": "529c5ad"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-28T12:51:09Z",
+          "updatedAt": "2023-02-28T12:51:09Z",
+          "comments": [
+            {
+              "originalPosition": 174,
+              "body": "> My idea here was that by requiring the multicast request, we have at least one method of discovery that Things can assume to always be working. However, on second thought, this might be problematic if the underlying network does not allow for multicast, so maybe we should either specify the situations in which this is required, or replace MUST with SHOULD. What are your thoughts on this?\r\n\r\nI was also thinking about changing MUST to SHOULD here. Maybe we could add a MUST assertion, though, that demands that a MUD receiver has to at least support one discovery method? Or should it also be possible that a MUD receiver only supports MUD URL submission?",
+              "createdAt": "2023-02-28T12:51:09Z",
+              "updatedAt": "2023-02-28T12:51:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OqABN",
+          "commit": {
+            "abbreviatedOid": "529c5ad"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-03-01T11:22:09Z",
+          "updatedAt": "2023-03-01T11:22:10Z",
+          "comments": [
+            {
+              "originalPosition": 174,
+              "body": "Depending on the environment, it might be desirable to have MUD receivers that only support submission, so I think just replacing MUST with SHOULD is sufficient here.",
+              "createdAt": "2023-03-01T11:22:09Z",
+              "updatedAt": "2023-03-01T11:22:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OqfhI",
+          "commit": {
+            "abbreviatedOid": "42fce5a"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-03-01T12:39:40Z",
+          "updatedAt": "2023-03-01T12:39:40Z",
+          "comments": [
+            {
+              "originalPosition": 212,
+              "body": "Small nit:\r\n\r\n```suggestion\r\n- MUD receivers that support IPv6 devices MUST join the \"All MUD Receivers\" IPv6 multicast group.\r\n\r\n- MUD receivers that support IPv4 devices MUST join the \"All CoAP Nodes\" IPv4 multicast group.\r\n```",
+              "createdAt": "2023-03-01T12:39:40Z",
+              "updatedAt": "2023-03-01T12:39:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OqhFy",
+          "commit": {
+            "abbreviatedOid": "42fce5a"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-03-01T12:42:57Z",
+          "updatedAt": "2023-03-01T12:42:57Z",
+          "comments": [
+            {
+              "originalPosition": 268,
+              "body": "Maybe we could also refer to RFC 8520 here?\r\n\r\n```suggestion\r\n(Very WIP for now)\r\n\r\nThe security considerations from {{!RFC8520}} also apply to this document.\r\nAdditionally, the following considerations should be taken into account.\r\n\r\n```",
+              "createdAt": "2023-03-01T12:42:57Z",
+              "updatedAt": "2023-03-01T12:42:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5OqmWx",
+          "commit": {
+            "abbreviatedOid": "42fce5a"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-03-01T12:55:22Z",
+          "updatedAt": "2023-03-01T12:55:23Z",
+          "comments": [
+            {
+              "originalPosition": 268,
+              "body": "Regarding the use of multicast, maybe we can also cite [draft-irtf-t2trg-amplification-attacks](https://datatracker.ietf.org/doc/html/draft-irtf-t2trg-amplification-attacks) in this section.",
+              "createdAt": "2023-03-01T12:55:23Z",
+              "updatedAt": "2023-03-01T12:55:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys5Oqr5m",
+          "commit": {
+            "abbreviatedOid": "42fce5a"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-03-01T13:09:45Z",
+          "updatedAt": "2023-03-01T13:09:46Z",
+          "comments": [
+            {
+              "originalPosition": 268,
+              "body": "```suggestion\r\n(Very WIP for now)\r\n\r\nThe security considerations from {{!RFC8520}} also apply to this document.\r\nRegarding CoAP specifics, {{!draft-irtf-t2trg-amplification-attacks}} provides information on possible attack scenarios.\r\nAdditionally, the following considerations should be taken into account.\r\n\r\n```",
+              "createdAt": "2023-03-01T13:09:45Z",
+              "updatedAt": "2023-03-01T13:09:46Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOFl88Ys5LOAaq",
+      "title": "Last fixes and clarifications for first draft version",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/14",
+      "state": "MERGED",
+      "author": "pulsastrix",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "pulsastrix"
+      ],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-03-03T11:55:05Z",
+      "updatedAt": "2023-03-03T13:58:27Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "2227ea71a2bb300cbb613c80f63a7be58774a86b",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "first-draft-minor-corrections",
+      "headRefOid": "af52ff23522f139903d140e3b7adab80671d12a2",
+      "closedAt": "2023-03-03T13:58:11Z",
+      "mergedAt": "2023-03-03T13:58:11Z",
+      "mergedBy": "pulsastrix",
+      "mergeCommit": {
+        "oid": "fe0f0862c72720b647d80cc71f368d7c3b599397"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5O5gkH",
+          "commit": {
+            "abbreviatedOid": "af52ff2"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-03-03T12:13:12Z",
+          "updatedAt": "2023-03-03T12:13:12Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOFl88Ys5n1o_X",
+      "title": "Update links in README",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/15",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Since our ownership of `namib.me` has expired (which is a bit unfortunate), this PR updates the Editor's Draft link to point to `namib-project.github.io` instead.\r\n\r\nI also updated the \"Individual Submission Draft\" link to point to the potential place where our document would be available once we submit it (at some point). However, since no submission is available yet, I just commented out the updated line.",
+      "createdAt": "2024-02-25T10:29:54Z",
+      "updatedAt": "2024-02-25T19:54:02Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "fe0f0862c72720b647d80cc71f368d7c3b599397",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "update-readme",
+      "headRefOid": "5c6134389d85a473b3a952d56490809e56479c4b",
+      "closedAt": "2024-02-25T19:53:59Z",
+      "mergedAt": "2024-02-25T19:53:59Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "f371182ccd06f667678ee3d025e4500772bc7cea"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5xO7qc",
+          "commit": {
+            "abbreviatedOid": "5c61343"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-25T19:52:57Z",
+          "updatedAt": "2024-02-25T19:52:57Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOFl88Ys5n1uJs",
+      "title": "Resolve and comment out TODOs",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/16",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR tries to resolve a few TODOs in the document. The TODOs that remain are commented out (if they aren't already) to not \"pollute\" the specification text. Still, before publishing the first version, they should be removed.",
+      "createdAt": "2024-02-25T11:41:17Z",
+      "updatedAt": "2024-02-25T19:05:11Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "fe0f0862c72720b647d80cc71f368d7c3b599397",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "todos",
+      "headRefOid": "97620a33f95112f98fd5610efbb0dc01ebccbf5a",
+      "closedAt": "2024-02-25T19:05:08Z",
+      "mergedAt": "2024-02-25T19:05:08Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "766fa8dad535b53d681bd43533d10d8945e4fc9b"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys5xO59C",
+          "commit": {
+            "abbreviatedOid": "97620a3"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-25T19:02:26Z",
+          "updatedAt": "2024-02-25T19:02:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "id": "PR_kwDOFl88Ys6gd-Ag",
+      "title": "Update draft metadata",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/17",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR will eventually update the draft's metadata.",
+      "createdAt": "2025-07-24T14:32:10Z",
+      "updatedAt": "2025-08-11T17:31:49Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "7696e9dae6e79fae8b174b8052d8cb3201d79a12",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "meta-data-update",
+      "headRefOid": "5e3e6da3b88730bf06af2dc63ffdea156eb17a79",
+      "closedAt": "2025-08-11T10:31:21Z",
+      "mergedAt": "2025-08-11T10:31:21Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "ad7904e568f51f8b73d52be65fb5ea720f1ae284"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys644MjF",
+          "commit": {
+            "abbreviatedOid": "5e3e6da"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-08T17:53:15Z",
+          "updatedAt": "2025-08-08T17:53:15Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
