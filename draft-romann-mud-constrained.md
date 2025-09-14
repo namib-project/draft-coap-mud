@@ -78,7 +78,7 @@ authenticity of both the URL itself and the associated MUD file.
 This specification re-uses the terminology defined in {{!RFC8520}}.
 <!-- Additionally, it introduces following terms: TODO -->
 
-# Architecture
+## Architecture
 
 Building upon the MUD architecture specified in {{!RFC8520}}, there are two
 main network components relevant for this document:
@@ -99,14 +99,16 @@ constrained environment can be seen in {{arch1-fig}}.
 Here, we can see that both the Thing and the MUD Receiver (as the recipient of
 the MUD URLs) may initiate the MUD discovery process:
 The Thing can contact and register with MUD URL recipients, e.g. by sending a
-CoAP POST request via Multicast, addressing a well-known registration endpoint.
+CoAP POST request via Multicast or addressing a well-known registration endpoint.
 Conversely, MUD recipients can initiate the discovery process, e.g. by sending a
 COAP GET request to a well-known URI via multicast.
 
 Note that the protocol used for communication between the MUD Receiver and
-MUD Manager is not specified in this document and implementation-specific.
+MUD Manager is considered out of scope for this document and is considered
+implementation-specific.
 
 <!-- TODO: Refine diagram -->
+<!-- TODO: We might also need to mention the CoRE RD here, either in prose or as part of the diagram -->
 
 <!--
 TODO: Fix once plantuml is included in the GitHub Actions Docker image.
@@ -127,7 +129,7 @@ package "MUD Architecture" {
 ...................................................
 .         __________ Forward valid ____________   .
 .        +          +  MUD URLs   +            +  .
-.        |   MUD    +------------>+    MUD     |  .
+.        | CoAP MUD +------------>+    MUD     |  .
 .        | Receiver |             |  Manager   |  .
 .        +__________+             +____________+  .
 .             ^                         .         .
@@ -149,32 +151,46 @@ authenticity of the MUD URL associated with them.
 For this purpose, this document specifies how to use CBOR Web Tokens {{!RFC8392}}
 to include MUD URLs as part of a signed and therefore authenticable token.
 
-# General Considerations
+## Methods of MUD URL Distribution {#general_methods}
 
-For this document, we focus on two mechanisms for exposing MUD URLs in a
-constrained network:
-On the one hand, Things can expose MUD URLs as a dedicated CoAP resource.
-This allows them to further secure the payload and provide additional
-authentication, e.g., by embedding the URL in a CBOR Web Token.
-On the other hand, Things can include a MUD URL in a list of links, using, for
-example, the CoRE Link-Format.
-This Web Linking approach also allows Things to submit MUD URLs to a Directory
-Service.
+In general, we consider two mechanisms for exposing MUD URLs in a
+constrained network: Using dedicated resources and embedding into existing
+self description formats.
 
+Things can expose MUD URLs as a dedicated resource, which may ease discovery of MUD-capable
+Things through said resource and enables the transmission of arbitrary
+payload types, including ones that provide authentication (e.g., CWTs {{!RFC8392}}).
+
+Alternatively, MUD URLs can also be referenced through other self description formats
+such as SUIT manifests {{!I-D.ietf-suit-mud}}.
+Including MUD URLs with other self descriptions can be advantageous with regard to the
+availability of said information (e.g., by making the MUD URL available through a central directory).
+<!-- TODO the last line seems a bit clumsy in its wording -->
+It may also ease the validation of the MUD URL's authenticity in cases where the other self description format
+or its method of distribution provides means for authentication.
+
+In this specification, we will describe how to embed a MUD URL into a CoRE Link
+Format {{!RFC6690}} resource, which may itself be retrieved directly from the device or through
+a CoRE Resource Directory {{!RFC9176}}.
+Additionally, we will define dedicated COAP resources both for providing and receiving MUD URLs.
+
+<!--
+TODO embed the chapter numbers into the previous paragraph once these chapters are properly refactored
 The first part of this section describes the mechanisms that use a dedicated
 MUD URL CoAP resource.
 In the later parts of this section, discovery methods for this MUD URL resource
 are specified.
 As part of the discovery method description, a method of providing MUD URLs directly
-using the CoRE link format is also described.
+using the CoRE Link-Format is also described.
+-->
 
 ## MUD URL CoAP Submission Flows {#general_submission-flows}
-In general, this specification provides two ways by which a MUD URL transmission can be performed using an explicit MUD URL resource.
+In general, this specification provides two ways by which a MUD URL transmission can be performed using a dedicated CoAP resource.
 
-In environments where many Things need to be managed over several subnets and where multicast usage is not desirable, it can be advantageous if the MUD Receiver provides a CoAP resource to perform submissions to and the Things initiate the MUD URL submission.
+In environments where many Things need to be managed over several subnets and where multicast usage is not desirable, it may be advantageous if MUD URLs are submitted by the Thing through a CoAP resource provided by the MUD Receiver.
 This will be referred to as the "Thing-initiated" submission flow for the remainder of this specification.
 
-Conversely, in environments where multicast is not an issue and things might be limited in their capabilities, it can be advantageous if MUD Receivers retrieve the MUD URL from a CoAP resource provided by the Things.
+Conversely, in environments where multicast is not an issue and things might be limited in their capabilities, it may be easier for the MUD Receiver to retrieve the MUD URL from a CoAP resource provided by the Thing.
 In this specification, this will be referred to as the "Receiver-initiated" submission flow.
 
 ### Using the MUD URL Resource (Receiver-initiated)
@@ -189,8 +205,7 @@ In general, the Receiver-initiated MUD URL flow can be divided into these steps:
     This resource should provide the MUD URL in one of the formats specified in {{general_payloads}}.
     It also makes this resource discoverable for MUD Receivers using the methods specified in {{general_discovery}}.
 
-2.  The MUD Receiver discovers the resource using the aforementioned methods.
-    Depending on the method of discovery, this could for example happen using a periodic scan for devices, e.g., by periodically requesting a well-known URI using multicast.
+2.  The MUD Receiver discovers the resource using the aforementioned methods, e.g., by periodically requesting a well-known URI using multicast.
 
 3.  The MUD Receiver retrieves the discovered resource for devices for which the MUD Controller does not have a current MUD URL.
     To do so, it performs a CoAP request for the discovered MUD URL resource URI using the GET method, which is responded to with the appropriate payload.
@@ -214,8 +229,9 @@ This flow can be divided into these general steps:
 3.  The Thing submits the MUD URL to the previously discovered URI.
     To do so, it performs a CoAP request to the discovered URI with the POST method.
     The MUD URL is contained as the message payload in this request using one of the content formats defined in {{general_payloads}}.
-    Receivers MAY be configured to limit the accepted Content-Formats to ones that provide some level of authenticity for the MUD URL based on policy.
-    However, receiver implementations MUST also support unauthenticated MUD URL transmissions if no policy forbids it.
+    Receivers MAY be configured by the network administrator to limit the accepted Content-Formats to ones that provide some level of authenticity for the MUD URL.
+    However, receiver implementations MUST also support unauthenticated MUD URL transmissions unless said policy forbids it.
+    <!-- TODO s/MUST/SHOULD/g ? -->
 <!-- TODO message response/response code indicating success? -->
 
 <!-- TODO advantages/disadvantages? -->
@@ -233,45 +249,27 @@ CoAP requests and responses that use this format MUST use the Content-Format opt
 ### MUD URLs inside of CBOR Web Tokens
 Previous methods of transmitting MUD URLs do not allow for authentication of supplied MUD URLs.
 To accomodate for environments where authentication of MUD URLs is desired, it is also possible to include the MUD URL as a claim inside of a CBOR Web Token {{!RFC8392}}.
-This allows for MUD Receivers or MUD Controllers to verify the authenticity of the provided MUD URL.
+This allows for MUD Receivers or MUD Controllers to verify the authenticity of the provided MUD URL, given that the key used for signing the CWT is known to belong to the Thing's manufacturer.
 
 CBOR Web Tokens that contain MUD URL information have the following properties:
 
-- The MUD URL is contained as an ASCII-encoded string in the "mud-url" claim.
+- The MUD URL is contained as an ASCII-encoded string in the `mud-url` claim.
 - The Token MAY contain proof-of-possession claims {{!RFC8747}}.
-  If it does, the MUD Receiver MUST verify that the device is in possession of the key specified in the cnf claim.
-  Proof-of-Possession claims that are transmitted over CoAP without DTLS/TLS MUST represent public keys, Receivers MUST treat any symmetric keys sent over insecure channels as invalid/compromised.
+  If it does, the MUD Receiver MUST verify that the Thing is in possession of the key specified in the `cnf` claim (see {{general_pop}}).
 - The Token MAY contain an expiry time.
   If an expiry time is specified, the MUD URL should be resubmitted or requested again shortly before the original CWT expires.
   Note that using an expiry time could cause problems if the device is unable to perform a refresh, e.g., due to a power outage.
 
-CoAP requests and responses that use this format MUST use the Content-Format option with the value corresponding to the "application/mud-url+cwt" media type.
+CoAP requests and responses that use this format MUST use the Content-Format option with the value corresponding to the `application/mud-url+cwt` media type.
 
 ## Proof-of-Possession for CBOR Web Tokens with MUD URLs {#general_pop}
-If the MUD URL is transmitted as a CBOR Web Token that includes proof-of-possession claims, the proof-of-possession claim SHOULD be verified.
-To do so, the following procedures SHOULD be used.
-Both of the following procedures use the establishment of a DTLS session using the PoP key in order to prove the possession of the key, similarly to the procedures defined in {{!RFC9202}}.
+If the MUD URL is transmitted as a CBOR Web Token that includes proof-of-possession claims, that claim MUST be verified.
+In general, most already specified PoP methods aim to reduce overhead by combining proof-of-possession with the authenticity-, integrity-, and replay-protection of the underlying CoAP session.
+Some examples of this approach may be found in the specifications for ACE-OAuth profiles found in {{!RFC9202}}, {{!RFC9203}}, and {{!RFC9431}}.
 
-<!-- TODO required ciphers? -->
+This specification provides two different methods for performing proof-of-possession in {{behavior_pop}}, which are adapted from the ACE-OAuth DTLS profile {{!RFC9202}} and OSCORE profile {{!RFC9203}}, respectively.
+Additionally, we will describe the necessary steps required for defining additional proof-of-possession methods in TODO.
 
-### For the Thing-initiated Flow
-
-1.  After submitting the MUD URL, the MUD Receiver parses the token.
-    If it detects proof-of-possession claims, the receiver MUST reply with a 4.01 (Unauthorized) CoAP response code and reject the token for now.
-    If the original submission request was not performed using CoAPS, the Receiver MUST also return a set of key information that can be used to establish a CoAP+DTLS session with it, as well as a CoAPS URI indicating the location of the secured submission resource.
-    <!-- TODO key format? -->
-2.  The Thing then repeats the submission request using its own key information, the Receiver's key information, and the provided URI.
-3.  During the DTLS handshake, the Receiver MUST require the Thing to use the proof-of-possession key included in the originally submitted token in order to successfully establish a DTLS session.
-4.  After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
-<!-- TODO do we still want to re-send the CWT? -->
-
-### For the Receiver-initiated Flow
-1. After receiving the MUD URL from a request (e.g., a multicast request), the MUD Receiver parses the token.
-   If it detects proof-of-possession claims, the receiver MUST continue with the following procedure before treating the CWT as valid.
-2. The receiver repeats the MUD URL request, this time using DTLS.
-   During the DTLS handshake, the Receiver must require the Thing to use the proof-of-possession key included in the originally received token in order to successfully establish the DTLS session.
-3. After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
-   <!-- TODO Unsure if DTLS even works without mutual auth, but i dont see why it shouldn't   -->
 
 ## Resource Discovery {#general_discovery}
 
@@ -308,6 +306,7 @@ A MUD manager itself MAY also act as a Resource Directory, directly applying the
 In addition to the registration endpoint defined in {{?RFC9176}}, MUD managers MAY define a separate registration interface when acting as a CoRE RD.
 
 # Obtaining a MUD URL in Constrained Environments
+<!-- TODO: Maybe rename this section and make it specific to the dedicated CoAP resource, and then have a separate top-level section for the embedding into the CoRE Link Format -->
 
 With the additional mechanisms for finding MUD URLs introduced in this document, MUD managers can be configured to play a more active role in discovering MUD-enabled devices.
 Furthermore, IoT devices could identify their peers based on a MUD URL associated with these devices or perform a configuration process based on the linked MUD file's contents.
@@ -329,6 +328,8 @@ using the Accept option, if provided.
 If the Thing supports resource discovery using a `/.well-known/core` resource,
 MUD URL resources SHOULD be advertised there using the CoRE Link-Format
 {{!RFC6690}}, indicating the available Content-Formats using the `ct` parameter.
+<!-- TODO should there also be a method of not only referencing the dedicated MUD URL resource,
+but also the actual MUD URL inside the CoRE Link Format resource directly? -->
 
 ### Registering MUD URLs with MUD Receivers
 
@@ -427,6 +428,52 @@ Regarding the actual MUD URL payload transmitted using CoAP, the following consi
             - CoAP Response Code?
     - Signature Verification
 -->
+
+## Proof-of-Possession Methods {#behavior_pop}
+
+TODO
+
+<!-- TODO mention here that the CWT must be signed by the manufacturer, while the PoP key must be owned and specific to the device -->
+
+### Requirements for Proof-of-Possession
+<!-- TODO this may also be an appendix (cf. RFC 9200, Appendix C) -->
+
+TODO
+
+### Proof-of-Possession using DTLS
+
+TODO
+
+<!-- TODO: This is the old, original text, maybe we can reuse parts of this
+
+Proof-of-Possession claims that are transmitted over CoAP without (D)TLS MUST represent public keys, Receivers MUST treat any symmetric keys sent over insecure channels as invalid/compromised.
+To do so, the following procedures SHOULD be used.
+Both of the following procedures use the establishment of a DTLS session using the PoP key in order to prove the possession of the key, similarly to the procedures defined in {{!RFC9202}}.
+
+### For the Thing-initiated Flow
+
+1.  After submitting the MUD URL, the MUD Receiver parses the token.
+    If it detects proof-of-possession claims, the receiver MUST reply with a 4.01 (Unauthorized) CoAP response code and reject the token for now.
+    If the original submission request was not performed using CoAPS, the Receiver MUST also return a set of key information that can be used to establish a CoAP+DTLS session with it, as well as a CoAPS URI indicating the location of the secured submission resource.
+    TODO key format?
+2.  The Thing then repeats the submission request using its own key information, the Receiver's key information, and the provided URI.
+3.  During the DTLS handshake, the Receiver MUST require the Thing to use the proof-of-possession key included in the originally submitted token in order to successfully establish a DTLS session.
+4.  After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
+TODO do we still want to re-send the CWT?
+
+### For the Receiver-initiated Flow
+1. After receiving the MUD URL from a request (e.g., a multicast request), the MUD Receiver parses the token.
+   If it detects proof-of-possession claims, the receiver MUST continue with the following procedure before treating the CWT as valid.
+2. The receiver repeats the MUD URL request, this time using DTLS.
+   During the DTLS handshake, the Receiver must require the Thing to use the proof-of-possession key included in the originally received token in order to successfully establish the DTLS session.
+3. After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
+    TODO Unsure if DTLS even works without mutual auth, but i dont see why it shouldn't
+
+-->
+
+### Proof-of-Possession using OSCORE
+
+TODO
 
 # Security Considerations
 (Very WIP for now)
