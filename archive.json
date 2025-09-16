@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-12T00:58:14.739372+00:00",
+  "timestamp": "2025-09-16T00:52:19.289235+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -1392,6 +1392,85 @@
           "createdAt": "2025-08-08T17:53:15Z",
           "updatedAt": "2025-08-08T17:53:15Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOFl88Ys6oe0uB",
+      "title": "Rewrite parts of the introduction, comment out old PoP section, add some TODOs",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/18",
+      "state": "OPEN",
+      "author": "pulsastrix",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "pulsastrix"
+      ],
+      "labels": [],
+      "body": "This PR rewrites large parts of the introduction to improve the chapter structure and to move some parts into the main specification. \r\nIt also removes/comments out large parts of the old proof-of-possession section, as it needs to be completely rewritten to account for the possibility of different PoP methods.\r\n\r\nFinally, I have also added some TODOs in places where I noticed stuff that doesn't seem right to me.\r\nI'll follow this PR up with a new draft for the PoP section in the next few days.",
+      "createdAt": "2025-09-14T12:15:22Z",
+      "updatedAt": "2025-09-14T13:07:20Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "ad7904e568f51f8b73d52be65fb5ea720f1ae284",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "rework_intro",
+      "headRefOid": "a7e1dd45657396668526db3deaed4c920ccd1f9e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys7ADL3y",
+          "commit": {
+            "abbreviatedOid": "a7e1dd4"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "Thank you, @pulsastrix :) I think the changes look pretty good already, just see a couple of comments below :)",
+          "createdAt": "2025-09-14T12:53:11Z",
+          "updatedAt": "2025-09-14T13:07:20Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Maybe we could keep this as a level 1 heading? Otherwise, I feel like the introduction becomes very long and IMHO an introduction should mainly give an overview of the content and the structure of the document.",
+              "createdAt": "2025-09-14T12:53:11Z",
+              "updatedAt": "2025-09-14T13:07:20Z"
+            },
+            {
+              "originalPosition": 14,
+              "body": "Hmm, I think the two are not mutually exclusive, right?\n\n```suggestion\nCoAP POST request via Multicast and/or addressing a well-known registration endpoint.\n```",
+              "createdAt": "2025-09-14T12:54:25Z",
+              "updatedAt": "2025-09-14T13:07:20Z"
+            },
+            {
+              "originalPosition": 15,
+              "body": "Maybe we should also talk about \"Receivers\" here as well?\n\n```suggestion\nConversely, a MUD Receiver can initiate the discovery process, e.g. by sending a\n```",
+              "createdAt": "2025-09-14T12:55:24Z",
+              "updatedAt": "2025-09-14T13:07:20Z"
+            },
+            {
+              "originalPosition": 67,
+              "body": "Hmm, does that sound better?\n\n```suggestion\nIf the other self description format or its method of distribution provides means for authentication, they may also be used for validating MUD URLs.\n```",
+              "createdAt": "2025-09-14T12:58:58Z",
+              "updatedAt": "2025-09-14T13:07:20Z"
+            },
+            {
+              "originalPosition": 179,
+              "body": "You mean like so? Or could you also say \"via CoAP _Resources_\"?\n\n```suggestion\n# Obtaining a MUD URL via CoAP\n```",
+              "createdAt": "2025-09-14T13:03:21Z",
+              "updatedAt": "2025-09-14T13:07:20Z"
+            },
+            {
+              "originalPosition": 188,
+              "body": "You mean (more or less) like it is mentioned in https://github.com/namib-project/draft-coap-mud/issues/4? I think that would make sense :)",
+              "createdAt": "2025-09-14T13:06:33Z",
+              "updatedAt": "2025-09-14T13:07:20Z"
+            }
+          ]
         }
       ]
     }
