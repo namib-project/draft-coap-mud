@@ -78,7 +78,7 @@ authenticity of both the URL itself and the associated MUD file.
 This specification re-uses the terminology defined in {{!RFC8520}}.
 <!-- Additionally, it introduces following terms: TODO -->
 
-## Architecture
+# Architecture
 
 Building upon the MUD architecture specified in {{!RFC8520}}, there are two
 main network components relevant for this document:
@@ -99,8 +99,8 @@ constrained environment can be seen in {{arch1-fig}}.
 Here, we can see that both the Thing and the MUD Receiver (as the recipient of
 the MUD URLs) may initiate the MUD discovery process:
 The Thing can contact and register with MUD URL recipients, e.g. by sending a
-CoAP POST request via Multicast or addressing a well-known registration endpoint.
-Conversely, MUD recipients can initiate the discovery process, e.g. by sending a
+CoAP POST request via Multicast and/or addressing a well-known registration endpoint.
+Conversely, a MUD Receiver can initiate the discovery process, e.g. by sending a
 COAP GET request to a well-known URI via multicast.
 
 Note that the protocol used for communication between the MUD Receiver and
@@ -165,9 +165,7 @@ Alternatively, MUD URLs can also be referenced through other self description fo
 such as SUIT manifests {{!I-D.ietf-suit-mud}}.
 Including MUD URLs with other self descriptions can be advantageous with regard to the
 availability of said information (e.g., by making the MUD URL available through a central directory).
-<!-- TODO the last line seems a bit clumsy in its wording -->
-It may also ease the validation of the MUD URL's authenticity in cases where the other self description format
-or its method of distribution provides means for authentication.
+If the other self description format or its method of distribution provides means for authentication, they may also be used for validating MUD URLs.
 
 In this specification, we will describe how to embed a MUD URL into a CoRE Link
 Format {{!RFC6690}} resource, which may itself be retrieved directly from the device or through
@@ -305,8 +303,7 @@ By using CoRE Resource Directories {{?RFC9176}}, devices can register a MUD file
 A MUD manager itself MAY also act as a Resource Directory, directly applying the policies from registered MUD files to the network.
 In addition to the registration endpoint defined in {{?RFC9176}}, MUD managers MAY define a separate registration interface when acting as a CoRE RD.
 
-# Obtaining a MUD URL in Constrained Environments
-<!-- TODO: Maybe rename this section and make it specific to the dedicated CoAP resource, and then have a separate top-level section for the embedding into the CoRE Link Format -->
+# Obtaining a MUD URL via dedicated CoAP Resources
 
 With the additional mechanisms for finding MUD URLs introduced in this document, MUD managers can be configured to play a more active role in discovering MUD-enabled devices.
 Furthermore, IoT devices could identify their peers based on a MUD URL associated with these devices or perform a configuration process based on the linked MUD file's contents.
