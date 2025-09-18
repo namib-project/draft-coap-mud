@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-16T00:52:19.289235+00:00",
+  "timestamp": "2025-09-18T00:52:05.266198+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -1400,7 +1400,7 @@
       "id": "PR_kwDOFl88Ys6oe0uB",
       "title": "Rewrite parts of the introduction, comment out old PoP section, add some TODOs",
       "url": "https://github.com/namib-project/draft-coap-mud/pull/18",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "pulsastrix",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -1409,17 +1409,19 @@
       "labels": [],
       "body": "This PR rewrites large parts of the introduction to improve the chapter structure and to move some parts into the main specification. \r\nIt also removes/comments out large parts of the old proof-of-possession section, as it needs to be completely rewritten to account for the possibility of different PoP methods.\r\n\r\nFinally, I have also added some TODOs in places where I noticed stuff that doesn't seem right to me.\r\nI'll follow this PR up with a new draft for the PoP section in the next few days.",
       "createdAt": "2025-09-14T12:15:22Z",
-      "updatedAt": "2025-09-14T13:07:20Z",
+      "updatedAt": "2025-09-17T17:55:02Z",
       "baseRepository": "namib-project/draft-coap-mud",
       "baseRefName": "master",
       "baseRefOid": "ad7904e568f51f8b73d52be65fb5ea720f1ae284",
       "headRepository": "namib-project/draft-coap-mud",
       "headRefName": "rework_intro",
-      "headRefOid": "a7e1dd45657396668526db3deaed4c920ccd1f9e",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "82d5c4cefe3ab074c2133c452b1e35e31de5fb47",
+      "closedAt": "2025-09-17T17:55:02Z",
+      "mergedAt": "2025-09-17T17:55:02Z",
+      "mergedBy": "pulsastrix",
+      "mergeCommit": {
+        "oid": "a251748753a5a3436fae46c153eef6d97cf895c8"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1471,6 +1473,119 @@
               "updatedAt": "2025-09-14T13:07:20Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys7A0xju",
+          "commit": {
+            "abbreviatedOid": "a7e1dd4"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-17T15:30:36Z",
+          "updatedAt": "2025-09-17T15:30:37Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Addressed in 82d5c4cefe3ab074c2133c452b1e35e31de5fb47",
+              "createdAt": "2025-09-17T15:30:37Z",
+              "updatedAt": "2025-09-17T15:30:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys7A0yEV",
+          "commit": {
+            "abbreviatedOid": "a7e1dd4"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-17T15:30:56Z",
+          "updatedAt": "2025-09-17T15:30:56Z",
+          "comments": [
+            {
+              "originalPosition": 67,
+              "body": "Sounds good, have applied this in 82d5c4cefe3ab074c2133c452b1e35e31de5fb47",
+              "createdAt": "2025-09-17T15:30:56Z",
+              "updatedAt": "2025-09-17T15:30:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys7A0yzu",
+          "commit": {
+            "abbreviatedOid": "a7e1dd4"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-17T15:31:31Z",
+          "updatedAt": "2025-09-17T15:31:32Z",
+          "comments": [
+            {
+              "originalPosition": 179,
+              "body": "I've now amended this heading to say \"Obtaining a MUD URL via dedicated CoAP Resources\" (82d5c4cefe3ab074c2133c452b1e35e31de5fb47)  ",
+              "createdAt": "2025-09-17T15:31:31Z",
+              "updatedAt": "2025-09-17T15:31:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys7A0zNh",
+          "commit": {
+            "abbreviatedOid": "a7e1dd4"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-17T15:31:51Z",
+          "updatedAt": "2025-09-17T15:31:51Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "Done in 82d5c4cefe3ab074c2133c452b1e35e31de5fb47",
+              "createdAt": "2025-09-17T15:31:51Z",
+              "updatedAt": "2025-09-17T15:31:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys7A00E7",
+          "commit": {
+            "abbreviatedOid": "a7e1dd4"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-17T15:32:32Z",
+          "updatedAt": "2025-09-17T15:32:32Z",
+          "comments": [
+            {
+              "originalPosition": 188,
+              "body": "Yes (sometimes, looking in the issue tracker actually helps :sweat_smile:)",
+              "createdAt": "2025-09-17T15:32:32Z",
+              "updatedAt": "2025-09-17T15:32:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOFl88Ys7A1viT",
+          "commit": {
+            "abbreviatedOid": "82d5c4c"
+          },
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "Thanks @pulsastrix -- LGTM :)",
+          "createdAt": "2025-09-17T16:35:34Z",
+          "updatedAt": "2025-09-17T16:35:34Z",
+          "comments": []
         }
       ]
     }
