@@ -5,9 +5,9 @@
 iotops                                                    J. Romann, Ed.
 Internet-Draft                                             H. Damer, Ed.
 Intended status: Informational                        Universität Bremen
-Expires: 21 March 2026                                        J. Jiménez
+Expires: 6 May 2026                                           J. Jiménez
                                                                 Ericsson
-                                                       17 September 2025
+                                                         2 November 2025
 
 
                  Using MUD in Constrained Environments
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 March 2026.
+   This Internet-Draft will expire on 6 May 2026.
 
 Copyright Notice
 
