@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-18T00:52:05.266198+00:00",
+  "timestamp": "2025-11-04T00:56:18.583549+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -1409,7 +1409,7 @@
       "labels": [],
       "body": "This PR rewrites large parts of the introduction to improve the chapter structure and to move some parts into the main specification. \r\nIt also removes/comments out large parts of the old proof-of-possession section, as it needs to be completely rewritten to account for the possibility of different PoP methods.\r\n\r\nFinally, I have also added some TODOs in places where I noticed stuff that doesn't seem right to me.\r\nI'll follow this PR up with a new draft for the PoP section in the next few days.",
       "createdAt": "2025-09-14T12:15:22Z",
-      "updatedAt": "2025-09-17T17:55:02Z",
+      "updatedAt": "2025-11-02T15:40:16Z",
       "baseRepository": "namib-project/draft-coap-mud",
       "baseRefName": "master",
       "baseRefOid": "ad7904e568f51f8b73d52be65fb5ea720f1ae284",
