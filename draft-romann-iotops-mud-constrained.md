@@ -4,7 +4,7 @@ coding: utf-8
 
 title: Using MUD in Constrained Environments
 abbrev: MUD and CoAP
-docname: draft-romann-mud-constrained-latest
+docname: draft-romann-iotops-mud-constrained-latest
 
 category: info # std is not allowed for independent submissions, as it seems
 submissiontype: independent
@@ -28,7 +28,6 @@ author:
  -
     ins: H. Damer
     name: Hugo Hakim Damer
-    organization: Universität Bremen
     email: hdamer@uni-bremen.de
     role: editor
     country: Germany
@@ -41,6 +40,7 @@ author:
 
 entity:
         SELF: "[RFC-XXXX]"
+...
 
 --- abstract
 This document specifies additional ways for discovering and emitting
@@ -101,7 +101,7 @@ the MUD URLs) may initiate the MUD discovery process:
 The Thing can contact and register with MUD URL recipients, e.g. by sending a
 CoAP POST request via Multicast and/or addressing a well-known registration endpoint.
 Conversely, a MUD Receiver can initiate the discovery process, e.g. by sending a
-COAP GET request to a well-known URI via multicast.
+CoAP GET request to a well-known URI via multicast.
 
 Note that the protocol used for communication between the MUD Receiver and
 MUD Manager is considered out of scope for this document and is considered
@@ -170,7 +170,7 @@ If the other self description format or its method of distribution provides mean
 In this specification, we will describe how to embed a MUD URL into a CoRE Link
 Format {{!RFC6690}} resource, which may itself be retrieved directly from the device or through
 a CoRE Resource Directory {{!RFC9176}}.
-Additionally, we will define dedicated COAP resources both for providing and receiving MUD URLs.
+Additionally, we will define dedicated CoAP resources both for providing and receiving MUD URLs.
 
 <!--
 TODO embed the chapter numbers into the previous paragraph once these chapters are properly refactored
