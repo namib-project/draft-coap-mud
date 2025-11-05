@@ -28,7 +28,6 @@ author:
  -
     ins: H. Damer
     name: Hugo Hakim Damer
-    organization: Universität Bremen
     email: hdamer@uni-bremen.de
     role: editor
     country: Germany
