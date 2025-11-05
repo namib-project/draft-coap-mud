@@ -3,7 +3,7 @@
 This is the working area for the Individual internet-draft, "Using MUD in CoAP".
 
 * [Editor's Copy](http://namib-project.github.io/draft-coap-mud/)
-* [Individual Submission Draft](https://tools.ietf.org/html/draft-romann-mud-constrained)
+* [Individual Submission Draft](https://tools.ietf.org/html/draft-romann-iotops-mud-constrained)
 
 ## Building the Draft
 
