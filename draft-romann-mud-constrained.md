@@ -41,6 +41,7 @@ author:
 
 entity:
         SELF: "[RFC-XXXX]"
+...
 
 --- abstract
 This document specifies additional ways for discovering and emitting
