@@ -4,7 +4,7 @@ coding: utf-8
 
 title: Using MUD in Constrained Environments
 abbrev: MUD and CoAP
-docname: draft-romann-mud-constrained-latest
+docname: draft-romann-iotops-mud-constrained-latest
 
 category: info # std is not allowed for independent submissions, as it seems
 submissiontype: independent
