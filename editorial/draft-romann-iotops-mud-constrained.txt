@@ -3,9 +3,10 @@
 
 
 iotops                                                    J. Romann, Ed.
-Internet-Draft                                             H. Damer, Ed.
-Intended status: Informational                        Universität Bremen
-Expires: 9 May 2026                                           J. Jiménez
+Internet-Draft                                        Universität Bremen
+Intended status: Informational                             H. Damer, Ed.
+Expires: 9 May 2026                                                     
+                                                              J. Jiménez
                                                                 Ericsson
                                                          5 November 2025
 
@@ -734,7 +735,6 @@ Authors' Addresses
 
 
    Hugo Hakim Damer (editor)
-   Universität Bremen
    Germany
    Email: hdamer@uni-bremen.de
 
