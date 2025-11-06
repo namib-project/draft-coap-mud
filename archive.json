@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-04T00:56:18.583549+00:00",
+  "timestamp": "2025-11-06T00:57:10.530060+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -1588,6 +1588,42 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 19,
+      "id": "PR_kwDOFl88Ys6xq-sJ",
+      "title": "Change draft name, apply (mostly) editorial changes",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/19",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "As suggested by Michael Richardson, this PR renames the draft to include `iotops`, removes the \"University of Bremen\" affiliation of @pulsastrix (since he already graduated), and applies some minor editorial fixes to the spelling of \"CoAP\".\r\n\r\nThis PR does not yet rename the MUD Receiver to Collector or Collator, but I think changing the name is a good suggestion in general. I will add it to the slides as a TODO after resubmitting this updated version and replacing the original draft.",
+      "createdAt": "2025-11-05T14:43:57Z",
+      "updatedAt": "2025-11-05T14:53:04Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "6415b1d3e8ed2be279ee9137c27e1666d03b6667",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "editorial",
+      "headRefOid": "d7f737e5c2e869fa4f50e11826ed973e9785e7ce",
+      "closedAt": "2025-11-05T14:52:59Z",
+      "mergedAt": "2025-11-05T14:52:59Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "94377a34d118da4f337cea2a55b62f0a44ac9ce9"
+      },
+      "comments": [
+        {
+          "author": "JKRhb",
+          "authorAssociation": "MEMBER",
+          "body": "@pulsastrix @jaimejim As the changes are pretty straightforward, I would simply merge this PR and resubmit a new version. I hope that is okay for you!",
+          "createdAt": "2025-11-05T14:52:47Z",
+          "updatedAt": "2025-11-05T14:52:47Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
