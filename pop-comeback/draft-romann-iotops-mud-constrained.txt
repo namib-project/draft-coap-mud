@@ -86,20 +86,20 @@ Table of Contents
        3.2.2.  MUD URL Submission Resource
        3.2.3.  MUD URL Resource
        3.2.4.  MUD URL Payload
-     3.3.  Proof-of-Possession Methods
-       3.3.1.  Proof-of-Possession using DTLS
-       3.3.2.  For the Thing-initiated Flow
-       3.3.3.  For the Receiver-initiated Flow
-       3.3.4.  Proof-of-Possession using OSCORE
-   4.   Security Considerations
-   5.  IANA Considerations
-     5.1.  Well-Known 'mud-url' URI
-     5.2.  Well-Known 'mud-file' URI
-     5.3.  Well-Known 'mud-submission' URI
-     5.4.  New 'mud' Resource Type
-     5.5.  Media Types Registry
-     5.6.  CoAP Content-Format Registry
-   6.  Normative References
+   4.  Proof-of-Possession Methods
+     4.1.  Proof-of-Possession using DTLS
+     4.2.  For the Thing-initiated Flow
+     4.3.  For the Receiver-initiated Flow
+     4.4.  Proof-of-Possession using OSCORE
+   5.   Security Considerations
+   6.  IANA Considerations
+     6.1.  Well-Known 'mud-url' URI
+     6.2.  Well-Known 'mud-file' URI
+     6.3.  Well-Known 'mud-submission' URI
+     6.4.  New 'mud' Resource Type
+     6.5.  Media Types Registry
+     6.6.  CoAP Content-Format Registry
+   7.  Normative References
    Appendix A.  Requirements for Proof-of-Possession
    Authors' Addresses
 
@@ -351,7 +351,7 @@ Table of Contents
    profiles found in [RFC9202], [RFC9203], and [RFC9431].
 
    This specification provides two different methods for performing
-   proof-of-possession in Section 3.3, which are adapted from the ACE-
+   proof-of-possession in Section 4, which are adapted from the ACE-
    OAuth DTLS profile [RFC9202] and OSCORE profile [RFC9203],
    respectively.  Additionally, we will describe the necessary steps
    required for defining additional proof-of-possession methods in TODO.
@@ -568,7 +568,7 @@ Table of Contents
       Web Tokens and validate them before treating submitted MUD URLs
       using this format as valid.
 
-3.3.  Proof-of-Possession Methods
+4.  Proof-of-Possession Methods
 
    If the CWT does not only contain the MUD URL but also an cnf claim,
    it is RECOMMENDED that a MUD Receiver performs a proof-of-permission
@@ -583,7 +583,7 @@ Table of Contents
    considerations regarding the use of PoP methods are discussed in
    Appendix A.
 
-3.3.1.  Proof-of-Possession using DTLS
+4.1.  Proof-of-Possession using DTLS
 
    TODO: Update
 
@@ -595,7 +595,7 @@ Table of Contents
    in order to prove the possession of the key, similarly to the
    procedures defined in [RFC9202].
 
-3.3.2.  For the Thing-initiated Flow
+4.2.  For the Thing-initiated Flow
 
    TODO: Update
 
@@ -621,7 +621,7 @@ Table of Contents
        key included in the CWT to the MUD Receiver, which can then treat
        the CWT as valid.  TODO do we still want to re-send the CWT?
 
-3.3.3.  For the Receiver-initiated Flow
+4.3.  For the Receiver-initiated Flow
 
    TODO: Update
 
@@ -641,11 +641,11 @@ Table of Contents
        the CWT as valid.  TODO Unsure if DTLS even works without mutual
        auth, but i dont see why it shouldn't
 
-3.3.4.  Proof-of-Possession using OSCORE
+4.4.  Proof-of-Possession using OSCORE
 
    TODO
 
-4.   Security Considerations
+5.   Security Considerations
 
    (Very WIP for now)
 
@@ -684,7 +684,7 @@ Table of Contents
    *  The keys whose signatures should be accepted by the MUD Receiver
       if a submission using CWTs is performed.
 
-5.  IANA Considerations
+6.  IANA Considerations
 
    *  CoAP Resource Media Types Registry
 
@@ -694,27 +694,27 @@ Table of Contents
 
    *  IPv6 Multicast Address Registry
 
-5.1.  Well-Known 'mud-url' URI
+6.1.  Well-Known 'mud-url' URI
 
-5.2.  Well-Known 'mud-file' URI
+6.2.  Well-Known 'mud-file' URI
 
-5.3.  Well-Known 'mud-submission' URI
+6.3.  Well-Known 'mud-submission' URI
 
-5.4.  New 'mud' Resource Type
+6.4.  New 'mud' Resource Type
 
-5.5.  Media Types Registry
-
-   *  application/mud-url+plain
-
-   *  application/mud-url+cwt
-
-5.6.  CoAP Content-Format Registry
+6.5.  Media Types Registry
 
    *  application/mud-url+plain
 
    *  application/mud-url+cwt
 
-6.  Normative References
+6.6.  CoAP Content-Format Registry
+
+   *  application/mud-url+plain
+
+   *  application/mud-url+cwt
+
+7.  Normative References
 
    [I-D.ietf-suit-mud]
               Moran, B. and H. Tschofenig, "Strong Assertions of IoT
