@@ -275,9 +275,9 @@ In this section, additional methods for resource discovery in constrained enviro
 
 ### Well-known URI and Multicast Addresses
 
-This document introduces a new well-known URI for discovering MUD URLs directly: `/.well-known/mud-url`.
+This document introduces a new well-known URI for discovering MUD URLs directly: `/.well-known/mud/url`.
 
-`/.well-known/mud-url` MAY be used to expose a URL pointing to a MUD file hosted by an external MUD file server.
+`/.well-known/mud/url` MAY be used to expose a URL pointing to a MUD file hosted by an external MUD file server.
 This MUD file MUST describe the device the URL was retrieved from or is referring to within a list of CoRE links.
 
 {{!RFC7252}} registers one IPv4 and one IPv6 address each for the purpose of CoAP multicast.
@@ -293,7 +293,7 @@ With the resource-types `mud-file` and `mud-url`, a link MAY be annotated as poi
 If a MUD URL is included as a resource in a list of CoRE web links, the supported Content-Formats MUST be indicated using the `ct` parameter.
 
 MUD Receivers or other devices can send a GET requests to a CoAP server for `/.well-known/core` and get in return a list of hypermedia links to other resources hosted in that server, encoded using the CoRE Link-Format {{!RFC6690}}.
-Among those, it will get the path to the resource exposing the MUD URL, for example `/.well-known/mud-url` and resource-types like `rt=mud-url`.
+Among those, it will get the path to the resource exposing the MUD URL, for example `/.well-known/mud/url` and resource-types like `rt=mud-url`.
 
 Things SHOULD only provide at most one link of resource type `mud-url` and `mud-file` each, unless they use MUD URLs encoded as CWTs with expiry times and provide an additional, basic MUD URL to enable token refresh.
 However, if a CoRE Link Format description contains multiple `mud-url` or `mud-file` entries of the same type, MUD Receivers MUST choose the MUD URL that provides the highest degree of authenticity protection (where CWTs with expiry time take precedence over CWTs without expiry time).
@@ -318,7 +318,7 @@ This section outlines specifics of this specification regarding the behavior of 
 ### Exposing MUD URLs
 
 Things MAY expose their MUD URL using a dedicated resource hosted under
-`/.well-known/mud-url`.
+`/.well-known/mud/url`.
 If a MUD URL is exposed this way, the resource MUST offer at least one of the
 specified serialization methods and MUST allow clients to choose between them
 using the Accept option, if provided.
@@ -352,7 +352,7 @@ perform the discovery process.
 Things MAY also directly send a POST request containing the MUD URL as
 a payload and a corresponding Content-Format option via unicast or to the All
 CoAP Nodes (IPv4) or the All MUD Receivers (IPv6) multicast address, using the well-known URI
-`/.well-known/mud-submission`.
+`/.well-known/mud/submission`.
 
 ### Finding MUD URLs of Other Things
 
@@ -370,9 +370,9 @@ In general, it is recommended that MUD Receivers support as much of the specific
 
 For the discovery process described in {{general_discovery}}, the following considerations apply to MUD Receivers:
 
-- MUD Receivers that support IPv6 SHOULD regularly perform a CoAP request to the "All MUD CoAP Nodes" multicast address for the `/.well-known/mud-url` URI.
+- MUD Receivers that support IPv6 SHOULD regularly perform a CoAP request to the "All MUD CoAP Nodes" multicast address for the `/.well-known/mud/url` URI.
 
-- MUD Receivers that support IPv4 SHOULD regularly perform a CoAP request to the "All CoAP Nodes" multicast address for the `/.well-known/mud-url` URI.
+- MUD Receivers that support IPv4 SHOULD regularly perform a CoAP request to the "All CoAP Nodes" multicast address for the `/.well-known/mud/url` URI.
 
 - MUD Receivers that support IPv6 devices MUST join the "All MUD Receivers" IPv6 multicast group.
 
@@ -386,7 +386,7 @@ For the discovery process described in {{general_discovery}}, the following cons
 
 This section describes the behavior for MUD Receivers regarding the Thing-initiated submission flow:
 
-- MUD Receivers MUST provide a submission resource under the `/.well-known/mud-submission` well-known URI.
+- MUD Receivers MUST provide a submission resource under the `/.well-known/mud/submission` well-known URI.
 
 - MUD Receivers SHOULD include their submission resource in any CoRE Link Format descriptions of their resources (both in `/.well-known/core` and in CoRE RD registrations, if applicable).
 
@@ -504,11 +504,11 @@ Network operators SHOULD specify a policy that describes:
 
 ##  Well-Known 'mud-url' URI
 
-<!-- Retrieval of MUD URL from device, Example: "/.well-known/mud-url" -->
+<!-- Retrieval of MUD URL from device, Example: "/.well-known/mud/url" -->
 
 ##  Well-Known 'mud-file' URI
 
-<!-- Direct retrieval of MUD file, Example: "/.well-known/mud-file" -->
+<!-- Direct retrieval of MUD file, Example: "/.well-known/mud/file" -->
 
 ## Well-Known 'mud-submission' URI
 
