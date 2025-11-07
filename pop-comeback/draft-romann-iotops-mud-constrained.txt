@@ -99,8 +99,8 @@ Table of Contents
      5.4.  New 'mud' Resource Type
      5.5.  Media Types Registry
      5.6.  CoAP Content-Format Registry
-   6.  Requirements for Proof-of-Possession
-   7.  Normative References
+   6.  Normative References
+   Appendix A.  Requirements for Proof-of-Possession
    Authors' Addresses
 
 1.   Introduction and Overview
@@ -579,7 +579,9 @@ Table of Contents
 
    This section details two proof-of-posession mechanisms using DTLS and
    OSCORE, both of which are (with minor differences) applicable to both
-   the Thing-initiated and the Receiver-iniated flow.
+   the Thing-initiated and the Receiver-iniated flow.  General
+   considerations regarding the use of PoP methods are discussed in
+   Appendix A.
 
 3.3.1.  Proof-of-Possession using DTLS
 
@@ -712,11 +714,7 @@ Table of Contents
 
    *  application/mud-url+cwt
 
-6.  Requirements for Proof-of-Possession
-
-   TODO
-
-7.  Normative References
+6.  Normative References
 
    [I-D.ietf-suit-mud]
               Moran, B. and H. Tschofenig, "Strong Assertions of IoT
@@ -790,6 +788,10 @@ Table of Contents
               Constrained Environments (ACE) Framework", RFC 9431,
               DOI 10.17487/RFC9431, July 2023,
               <https://www.rfc-editor.org/rfc/rfc9431>.
+
+Appendix A.  Requirements for Proof-of-Possession
+
+   TODO
 
 Authors' Addresses
 
