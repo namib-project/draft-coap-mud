@@ -88,9 +88,9 @@ Table of Contents
        3.2.4.  MUD URL Payload
    4.  Proof-of-Possession Methods
      4.1.  Proof-of-Possession using DTLS
-     4.2.  For the Thing-initiated Flow
-     4.3.  For the Receiver-initiated Flow
-     4.4.  Proof-of-Possession using OSCORE
+       4.1.1.  For the Thing-initiated Flow
+       4.1.2.  For the Receiver-initiated Flow
+     4.2.  Proof-of-Possession using OSCORE
    5.   Security Considerations
    6.  IANA Considerations
      6.1.  Well-Known 'mud-url' URI
@@ -595,7 +595,7 @@ Table of Contents
    in order to prove the possession of the key, similarly to the
    procedures defined in [RFC9202].
 
-4.2.  For the Thing-initiated Flow
+4.1.1.  For the Thing-initiated Flow
 
    TODO: Update
 
@@ -621,7 +621,7 @@ Table of Contents
        key included in the CWT to the MUD Receiver, which can then treat
        the CWT as valid.  TODO do we still want to re-send the CWT?
 
-4.3.  For the Receiver-initiated Flow
+4.1.2.  For the Receiver-initiated Flow
 
    TODO: Update
 
@@ -641,7 +641,7 @@ Table of Contents
        the CWT as valid.  TODO Unsure if DTLS even works without mutual
        auth, but i dont see why it shouldn't
 
-4.4.  Proof-of-Possession using OSCORE
+4.2.  Proof-of-Possession using OSCORE
 
    TODO
 

@@ -1245,15 +1245,17 @@ and CBOR Web Tokens.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-proof-of-possession-using-d" class="internal xref">Proof-of-Possession using DTLS</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1.2.1">
+                    <p id="section-toc.1-1.4.2.1.2.1.1"><a href="#section-4.1.1" class="auto internal xref">4.1.1</a>.  <a href="#name-for-the-thing-initiated-flo" class="internal xref">For the Thing-initiated Flow</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1.2.2">
+                    <p id="section-toc.1-1.4.2.1.2.2.1"><a href="#section-4.1.2" class="auto internal xref">4.1.2</a>.  <a href="#name-for-the-receiver-initiated-" class="internal xref">For the Receiver-initiated Flow</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
-                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-for-the-thing-initiated-flo" class="internal xref">For the Thing-initiated Flow</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
-                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-for-the-receiver-initiated-" class="internal xref">For the Receiver-initiated Flow</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
-                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-proof-of-possession-using-o" class="internal xref">Proof-of-Possession using OSCORE</a></p>
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-proof-of-possession-using-o" class="internal xref">Proof-of-Possession using OSCORE</a></p>
 </li>
             </ul>
 </li>
@@ -1773,62 +1775,62 @@ General considerations regarding the use of PoP methods are discussed in
 <p id="section-4.1-2">Proof-of-Possession claims that are transmitted over CoAP without (D)TLS MUST represent public keys, Receivers MUST treat any symmetric keys sent over insecure channels as invalid/compromised.
 To do so, the following procedures SHOULD be used.
 Both of the following procedures use the establishment of a DTLS session using the PoP key in order to prove the possession of the key, similarly to the procedures defined in <span>[<a href="#RFC9202" class="cite xref">RFC9202</a>]</span>.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
-</section>
-</div>
 <div id="for-the-thing-initiated-flow">
-<section id="section-4.2">
-        <h3 id="name-for-the-thing-initiated-flo">
-<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-for-the-thing-initiated-flo" class="section-name selfRef">For the Thing-initiated Flow</a>
-        </h3>
-<p id="section-4.2-1">TODO: Update<a href="#section-4.2-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-4.2-2">
-<li id="section-4.2-2.1">
-            <p id="section-4.2-2.1.1">After submitting the MUD URL, the MUD Receiver parses the token.
+<section id="section-4.1.1">
+          <h4 id="name-for-the-thing-initiated-flo">
+<a href="#section-4.1.1" class="section-number selfRef">4.1.1. </a><a href="#name-for-the-thing-initiated-flo" class="section-name selfRef">For the Thing-initiated Flow</a>
+          </h4>
+<p id="section-4.1.1-1">TODO: Update<a href="#section-4.1.1-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.1.1-2">
+<li id="section-4.1.1-2.1">
+              <p id="section-4.1.1-2.1.1">After submitting the MUD URL, the MUD Receiver parses the token.
 If it detects proof-of-possession claims, the receiver MUST reply with a 4.01 (Unauthorized) CoAP response code and reject the token for now.
 If the original submission request was not performed using CoAPS, the Receiver MUST also return a set of key information that can be used to establish a CoAP+DTLS session with it, as well as a CoAPS URI indicating the location of the secured submission resource.
-TODO key format?<a href="#section-4.2-2.1.1" class="pilcrow">¶</a></p>
+TODO key format?<a href="#section-4.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-4.2-2.2">
-            <p id="section-4.2-2.2.1">The Thing then repeats the submission request using its own key information, the Receiver's key information, and the provided URI.<a href="#section-4.2-2.2.1" class="pilcrow">¶</a></p>
+            <li id="section-4.1.1-2.2">
+              <p id="section-4.1.1-2.2.1">The Thing then repeats the submission request using its own key information, the Receiver's key information, and the provided URI.<a href="#section-4.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-4.2-2.3">
-            <p id="section-4.2-2.3.1">During the DTLS handshake, the Receiver MUST require the Thing to use the proof-of-possession key included in the originally submitted token in order to successfully establish a DTLS session.<a href="#section-4.2-2.3.1" class="pilcrow">¶</a></p>
+            <li id="section-4.1.1-2.3">
+              <p id="section-4.1.1-2.3.1">During the DTLS handshake, the Receiver MUST require the Thing to use the proof-of-possession key included in the originally submitted token in order to successfully establish a DTLS session.<a href="#section-4.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-4.2-2.4">
-            <p id="section-4.2-2.4.1">After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
-TODO do we still want to re-send the CWT?<a href="#section-4.2-2.4.1" class="pilcrow">¶</a></p>
+            <li id="section-4.1.1-2.4">
+              <p id="section-4.1.1-2.4.1">After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
+TODO do we still want to re-send the CWT?<a href="#section-4.1.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
-        </ol>
+          </ol>
 </section>
 </div>
 <div id="for-the-receiver-initiated-flow">
-<section id="section-4.3">
-        <h3 id="name-for-the-receiver-initiated-">
-<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-for-the-receiver-initiated-" class="section-name selfRef">For the Receiver-initiated Flow</a>
-        </h3>
-<p id="section-4.3-1">TODO: Update<a href="#section-4.3-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-4.3-2">
-<li id="section-4.3-2.1">
-            <p id="section-4.3-2.1.1">After receiving the MUD URL from a request (e.g., a multicast request), the MUD Receiver parses the token.
-If it detects proof-of-possession claims, the receiver MUST continue with the following procedure before treating the CWT as valid.<a href="#section-4.3-2.1.1" class="pilcrow">¶</a></p>
+<section id="section-4.1.2">
+          <h4 id="name-for-the-receiver-initiated-">
+<a href="#section-4.1.2" class="section-number selfRef">4.1.2. </a><a href="#name-for-the-receiver-initiated-" class="section-name selfRef">For the Receiver-initiated Flow</a>
+          </h4>
+<p id="section-4.1.2-1">TODO: Update<a href="#section-4.1.2-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.1.2-2">
+<li id="section-4.1.2-2.1">
+              <p id="section-4.1.2-2.1.1">After receiving the MUD URL from a request (e.g., a multicast request), the MUD Receiver parses the token.
+If it detects proof-of-possession claims, the receiver MUST continue with the following procedure before treating the CWT as valid.<a href="#section-4.1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-4.3-2.2">
-            <p id="section-4.3-2.2.1">The receiver repeats the MUD URL request, this time using DTLS.
-During the DTLS handshake, the Receiver must require the Thing to use the proof-of-possession key included in the originally received token in order to successfully establish the DTLS session.<a href="#section-4.3-2.2.1" class="pilcrow">¶</a></p>
+            <li id="section-4.1.2-2.2">
+              <p id="section-4.1.2-2.2.1">The receiver repeats the MUD URL request, this time using DTLS.
+During the DTLS handshake, the Receiver must require the Thing to use the proof-of-possession key included in the originally received token in order to successfully establish the DTLS session.<a href="#section-4.1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-4.3-2.3">
-            <p id="section-4.3-2.3.1">After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
- TODO Unsure if DTLS even works without mutual auth, but i dont see why it shouldn't<a href="#section-4.3-2.3.1" class="pilcrow">¶</a></p>
+            <li id="section-4.1.2-2.3">
+              <p id="section-4.1.2-2.3.1">After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
+ TODO Unsure if DTLS even works without mutual auth, but i dont see why it shouldn't<a href="#section-4.1.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-        </ol>
+          </ol>
+</section>
+</div>
 </section>
 </div>
 <div id="proof-of-possession-using-oscore">
-<section id="section-4.4">
+<section id="section-4.2">
         <h3 id="name-proof-of-possession-using-o">
-<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-proof-of-possession-using-o" class="section-name selfRef">Proof-of-Possession using OSCORE</a>
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-proof-of-possession-using-o" class="section-name selfRef">Proof-of-Possession using OSCORE</a>
         </h3>
-<p id="section-4.4-1">TODO<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-1">TODO<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
