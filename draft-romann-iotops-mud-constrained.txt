@@ -5,10 +5,10 @@
 iotops                                                    J. Romann, Ed.
 Internet-Draft                                        Universität Bremen
 Intended status: Informational                             H. Damer, Ed.
-Expires: 9 May 2026                                                     
+Expires: 12 May 2026                                                    
                                                               J. Jiménez
                                                                 Ericsson
-                                                         5 November 2025
+                                                         8 November 2025
 
 
                  Using MUD in Constrained Environments
@@ -47,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 May 2026.
+   This Internet-Draft will expire on 12 May 2026.
 
 Copyright Notice
 
@@ -362,9 +362,9 @@ Table of Contents
 2.5.1.  Well-known URI and Multicast Addresses
 
    This document introduces a new well-known URI for discovering MUD
-   URLs directly: /.well-known/mud-url.
+   URLs directly: /.well-known/mud/url.
 
-   /.well-known/mud-url MAY be used to expose a URL pointing to a MUD
+   /.well-known/mud/url MAY be used to expose a URL pointing to a MUD
    file hosted by an external MUD file server.  This MUD file MUST
    describe the device the URL was retrieved from or is referring to
    within a list of CoRE links.
@@ -394,7 +394,7 @@ Table of Contents
    server for /.well-known/core and get in return a list of hypermedia
    links to other resources hosted in that server, encoded using the
    CoRE Link-Format [RFC6690].  Among those, it will get the path to the
-   resource exposing the MUD URL, for example /.well-known/mud-url and
+   resource exposing the MUD URL, for example /.well-known/mud/url and
    resource-types like rt=mud-url.
 
    Things SHOULD only provide at most one link of resource type mud-url
@@ -439,7 +439,7 @@ Table of Contents
 3.1.1.  Exposing MUD URLs
 
    Things MAY expose their MUD URL using a dedicated resource hosted
-   under /.well-known/mud-url.  If a MUD URL is exposed this way, the
+   under /.well-known/mud/url.  If a MUD URL is exposed this way, the
    resource MUST offer at least one of the specified serialization
    methods and MUST allow clients to choose between them using the
    Accept option, if provided.  If the Thing supports resource discovery
@@ -471,7 +471,7 @@ Table of Contents
    Things MAY also directly send a POST request containing the MUD URL
    as a payload and a corresponding Content-Format option via unicast or
    to the All CoAP Nodes (IPv4) or the All MUD Receivers (IPv6)
-   multicast address, using the well-known URI /.well-known/mud-
+   multicast address, using the well-known URI /.well-known/mud/
    submission.
 
 3.1.3.  Finding MUD URLs of Other Things
@@ -497,11 +497,11 @@ Table of Contents
 
    *  MUD Receivers that support IPv6 SHOULD regularly perform a CoAP
       request to the "All MUD CoAP Nodes" multicast address for the
-      /.well-known/mud-url URI.
+      /.well-known/mud/url URI.
 
    *  MUD Receivers that support IPv4 SHOULD regularly perform a CoAP
       request to the "All CoAP Nodes" multicast address for the /.well-
-      known/mud-url URI.
+      known/mud/url URI.
 
    *  MUD Receivers that support IPv6 devices MUST join the "All MUD
       Receivers" IPv6 multicast group.
@@ -522,7 +522,7 @@ Table of Contents
    Thing-initiated submission flow:
 
    *  MUD Receivers MUST provide a submission resource under the /.well-
-      known/mud-submission well-known URI.
+      known/mud/submission well-known URI.
 
    *  MUD Receivers SHOULD include their submission resource in any CoRE
       Link Format descriptions of their resources (both in /.well-known/
