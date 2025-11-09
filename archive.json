@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-06T00:57:10.530060+00:00",
+  "timestamp": "2025-11-09T00:59:41.209182+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -1623,6 +1623,74 @@
           "updatedAt": "2025-11-05T14:52:47Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 20,
+      "id": "PR_kwDOFl88Ys6yPTO4",
+      "title": "Change the format of well-known URL to /.well-known/mud/x",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/20",
+      "state": "MERGED",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "As suggested by Michael Richardson, this PR changes the format of the well-known URIs for interacting with MUD Receivers to `/.well-known/mud/x` (instead of `/.well-known/mud-x`).",
+      "createdAt": "2025-11-07T22:39:26Z",
+      "updatedAt": "2025-11-08T19:13:01Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "0f32b1d529918ecacb48472c0b578bcd61b31de0",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "mud-url-url",
+      "headRefOid": "83bb0d8031f9fa539e169f48c9bffcb989a1f27a",
+      "closedAt": "2025-11-08T19:12:56Z",
+      "mergedAt": "2025-11-08T19:12:56Z",
+      "mergedBy": "JKRhb",
+      "mergeCommit": {
+        "oid": "e11c51ed800f947c19ebaed619e2602c65e592cb"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFl88Ys7M20JD",
+          "commit": {
+            "abbreviatedOid": "83bb0d8"
+          },
+          "author": "pulsastrix",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-11-08T00:04:30Z",
+          "updatedAt": "2025-11-08T00:04:30Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOFl88Ys6yPVyR",
+      "title": "Start bringing back the PoP Methods section",
+      "url": "https://github.com/namib-project/draft-coap-mud/pull/21",
+      "state": "OPEN",
+      "author": "JKRhb",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR tries to start the process of bringing the PoP section back. Feel free to apply any updates to this branch as you like, @pulsastrix!",
+      "createdAt": "2025-11-07T22:48:32Z",
+      "updatedAt": "2025-11-07T22:58:57Z",
+      "baseRepository": "namib-project/draft-coap-mud",
+      "baseRefName": "master",
+      "baseRefOid": "0f32b1d529918ecacb48472c0b578bcd61b31de0",
+      "headRepository": "namib-project/draft-coap-mud",
+      "headRefName": "pop-comeback",
+      "headRefOid": "7e3e9ea951e7141c97548353cade259fef8ad0c0",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
       "reviews": []
     }
   ]
