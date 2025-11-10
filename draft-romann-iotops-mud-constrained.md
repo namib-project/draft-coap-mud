@@ -426,28 +426,32 @@ Regarding the actual MUD URL payload transmitted using CoAP, the following consi
     - Signature Verification
 -->
 
-## Proof-of-Possession Methods {#behavior_pop}
+# Proof-of-Possession Methods {#behavior_pop}
 
-TODO
+If the CWT does not only contain the MUD URL but also an `cnf` claim,
+it is RECOMMENDED that a MUD Receiver performs a proof-of-permission mechanism
+to verify the binding of the token to the respective device via its private
+proof-of-possession (PoP) key.
+While the CWT MUST be signed by the manufacturer the PoP key must be owned by
+and specific to the device.
 
-<!-- TODO mention here that the CWT must be signed by the manufacturer, while the PoP key must be owned and specific to the device -->
+This section details two proof-of-posession mechanisms using DTLS and OSCORE,
+both of which are (with minor differences) applicable to both the
+Thing-initiated and the Receiver-iniated flow.
+General considerations regarding the use of PoP methods are discussed in
+{{pop-requirements}}.
 
-### Requirements for Proof-of-Possession
-<!-- TODO this may also be an appendix (cf. RFC 9200, Appendix C) -->
+## Proof-of-Possession using DTLS
 
-TODO
-
-### Proof-of-Possession using DTLS
-
-TODO
-
-<!-- TODO: This is the old, original text, maybe we can reuse parts of this
+TODO: Update
 
 Proof-of-Possession claims that are transmitted over CoAP without (D)TLS MUST represent public keys, Receivers MUST treat any symmetric keys sent over insecure channels as invalid/compromised.
 To do so, the following procedures SHOULD be used.
 Both of the following procedures use the establishment of a DTLS session using the PoP key in order to prove the possession of the key, similarly to the procedures defined in {{!RFC9202}}.
 
 ### For the Thing-initiated Flow
+
+TODO: Update
 
 1.  After submitting the MUD URL, the MUD Receiver parses the token.
     If it detects proof-of-possession claims, the receiver MUST reply with a 4.01 (Unauthorized) CoAP response code and reject the token for now.
@@ -459,6 +463,9 @@ Both of the following procedures use the establishment of a DTLS session using t
 TODO do we still want to re-send the CWT?
 
 ### For the Receiver-initiated Flow
+
+TODO: Update
+
 1. After receiving the MUD URL from a request (e.g., a multicast request), the MUD Receiver parses the token.
    If it detects proof-of-possession claims, the receiver MUST continue with the following procedure before treating the CWT as valid.
 2. The receiver repeats the MUD URL request, this time using DTLS.
@@ -466,9 +473,7 @@ TODO do we still want to re-send the CWT?
 3. After the DTLS handshake, the Thing has proven possession of the key included in the CWT to the MUD Receiver, which can then treat the CWT as valid.
     TODO Unsure if DTLS even works without mutual auth, but i dont see why it shouldn't
 
--->
-
-### Proof-of-Possession using OSCORE
+## Proof-of-Possession using OSCORE
 
 TODO
 
@@ -525,6 +530,12 @@ Network operators SHOULD specify a policy that describes:
 - application/mud-url+cwt
 
 --- back
+
+# Requirements for Proof-of-Possession  {#pop-requirements}
+
+TODO
+
+<!-- (cf. RFC 9200, Appendix C) -->
 
 <!--
 # Acknowledgments
