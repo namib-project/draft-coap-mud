@@ -10,12 +10,12 @@ category: info # std is not allowed for independent submissions, as it seems
 submissiontype: independent
 # consensus: true # Not allowed for independent submissions
 
-area: ops
-workgroup: iotops
+area: "Operations and Management"
+workgroup: "IOT Operations"
 keyword: Internet-Draft, CoAP, MUD
 
 venue:
-  github: namib-project/draft-coap-mud
+  github: "namib-project/draft-coap-mud"
 
 author:
  -
