@@ -2,7 +2,7 @@
 
 
 
-iotops                                                    J. Romann, Ed.
+IOT Operations                                            J. Romann, Ed.
 Internet-Draft                                        Universität Bremen
 Intended status: Informational                             H. Damer, Ed.
 Expires: 26 June 2026                                                   
