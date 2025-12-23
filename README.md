@@ -1,17 +1,31 @@
-# Using MUD in CoAP
+<!-- regenerate: on (set to off if you edit this file) -->
 
-This is the working area for the Individual internet-draft, "Using MUD in CoAP".
+# Using MUD in Constrained Environments
 
-* [Editor's Copy](http://namib-project.github.io/draft-coap-mud/)
-* [Individual Submission Draft](https://tools.ietf.org/html/draft-romann-iotops-mud-constrained)
+This is the working area for the individual Internet-Draft, "Using MUD in Constrained Environments".
 
-## Building the Draft
+* [Editor's Copy](https://namib-project.github.io/draft-coap-mud/#go.draft-romann-iotops-mud-constrained.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-romann-iotops-mud-constrained)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-romann-iotops-mud-constrained)
+* [Compare Editor's Copy to Individual Draft](https://namib-project.github.io/draft-coap-mud/#go.draft-romann-iotops-mud-constrained.diff)
 
-Formatted TXT, XML and HTML versions of the draft can be built using `make`.
-
-This requires that you have the necessary software installed.  See [the
-instructions](https://github.com/martinthomson/i-d-template/blob/master/doc/SETUP.md).
 
 ## Contributing
 
-See the [guidelines for contributions](https://github.com/jaimejim/draft-coap-mud/blob/master/CONTRIBUTING.md).
+See the
+[guidelines for contributions](https://github.com/namib-project/draft-coap-mud/blob/master/CONTRIBUTING.md).
+
+The contributing file also has tips on how to make contributions, if you
+don't already know how to do that.
+
+## Command Line Usage
+
+Formatted text and HTML versions of the draft can be built using `make`.
+
+```sh
+$ make
+```
+
+Command line usage requires that you have the necessary software installed.  See
+[the instructions](https://github.com/martinthomson/i-d-template/blob/main/doc/SETUP.md).
+
