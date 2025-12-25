@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-09T00:59:41.209182+00:00",
+  "timestamp": "2025-12-25T01:00:20.279861+00:00",
   "repo": "namib-project/draft-coap-mud",
   "labels": [
     {
@@ -1679,13 +1679,13 @@
       "labels": [],
       "body": "This PR tries to start the process of bringing the PoP section back. Feel free to apply any updates to this branch as you like, @pulsastrix!",
       "createdAt": "2025-11-07T22:48:32Z",
-      "updatedAt": "2025-11-07T22:58:57Z",
+      "updatedAt": "2025-12-24T12:33:31Z",
       "baseRepository": "namib-project/draft-coap-mud",
       "baseRefName": "master",
-      "baseRefOid": "0f32b1d529918ecacb48472c0b578bcd61b31de0",
+      "baseRefOid": "223e4f14d4378df8dd9f8d58bed8eb285b299112",
       "headRepository": "namib-project/draft-coap-mud",
       "headRefName": "pop-comeback",
-      "headRefOid": "7e3e9ea951e7141c97548353cade259fef8ad0c0",
+      "headRefOid": "2a70f9814c51c5f88441c0c0b9a314b368138cdf",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
